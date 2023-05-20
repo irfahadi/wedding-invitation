@@ -21,25 +21,12 @@ export default function IndexPage() {
   };
 
   return (
-    <main className="flex flex-col items-center min-h-screen max-w-screen-md mx-auto bg-white relative">
-      <Image
-        className="absolute max-w-screen-md"
-        src="top_ornaments.svg"
-        alt="top_ornaments"
-        width={1080}
-        height={584}
-        priority
-      />
-      <Image
-        className="absolute max-w-screen-md bottom-0"
-        src="bottom_ornaments.svg"
-        alt="bottom_ornaments"
-        width={1080}
-        height={584}
-        priority
-      />
+    <main className="relative overflow-x-hidden">
+      {invitationIsOpen && (
+        <HomeContent className="flex flex-col min-h-screen max-w-screen-md items-center justify-center bg-white mx-auto relative" />
+      )}
       <InvitationCard
-        className={`flex flex-col w-full items-center justify-center invitation-card ${
+        className={`flex flex-col min-h-screen max-w-screen-md items-center justify-center bg-white z-10 mx-auto invitation-card ${
           invitationIsOpen ? "hide" : ""
         }`}
         hasPartner={searchParams.get("p") === "true"}
@@ -47,9 +34,6 @@ export default function IndexPage() {
         prefix={prefix}
         openInvitation={openInvitation}
       />
-      {invitationIsOpen && (
-        <HomeContent className="flex flex-col w-full items-center space-y-6 py-40 px-8 relative" />
-      )}
     </main>
   );
 }
