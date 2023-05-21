@@ -4,18 +4,41 @@ import { CSSProperties, MouseEventHandler } from "react";
 export default function InvitationCard({
   className,
   hasPartner,
+  partnerName,
   to,
-  prefix,
+  gender,
+  married,
   openInvitation,
   style,
 }: {
   className?: string;
   hasPartner?: boolean;
+  partnerName?: string | null;
   to?: string | null;
-  prefix?: string;
+  gender?: string | null;
+  married?: boolean;
   openInvitation?: MouseEventHandler<HTMLButtonElement>;
   style?: CSSProperties;
 }) {
+  const displayName = () => {
+    let target;
+
+    if (gender === "f") {
+      target = `${married ? "Mrs." : "Ms."} ${to || "Lorem Ipsum"}`;
+    } else {
+      target = `Mr. ${to || "Lorem Ipsum"}`;
+    }
+
+    if (!hasPartner) return target;
+    if (!partnerName) return `${target} & Partner`;
+
+    if (gender === "f") {
+      return `Mr. ${partnerName} & ${target}`;
+    }
+
+    return `${target} & ${married ? "Mrs." : "Ms."} ${to}`;
+  };
+
   return (
     <section className={className} style={style}>
       <Image
@@ -51,15 +74,13 @@ export default function InvitationCard({
         >
           <Image
             className="absolute"
-            src="/gold_frame.svg"
+            src="invitationCard/gold_frame.svg"
             alt="gold_frame"
             width={350}
             height={90}
             priority
           />
-          {`${prefix || "Mr."} ${to || "Lorem Ipsum"} ${
-            hasPartner ? "& Partner" : ""
-          }`}
+          {displayName()}
         </p>
         <p className="flex w-full justify-center text-center text-lg mt-2">
           You are invited to our <br />

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HomeContent({ className }: { className?: string }) {
   return (
@@ -19,12 +20,12 @@ export default function HomeContent({ className }: { className?: string }) {
         height={584}
         priority
       />
-      <article className="flex flex-col items-center justify-center z-10 space-y-4 lg:space-y-8 py-20 lg:py-40 px-4 lg:px-8">
+      <section className="flex flex-col items-center justify-center z-10 space-y-8 py-16 md:py-24 lg:py-32 px-4 md:px-6 lg:px-8">
         <Image
           src="/monogram.svg"
           alt="monogram"
-          width={125}
-          height={125}
+          width={128}
+          height={128}
           priority
         />
         <article className="flex flex-col items-center space-y-4 w-full">
@@ -34,40 +35,105 @@ export default function HomeContent({ className }: { className?: string }) {
             <span className="block">- Corinthians 13:7 -</span>
           </div>
         </article>
+
         <article className="flex flex-col items-center space-y-4 w-full">
-          <div className="rounded-full bg-slate-700 w-40 h-40"></div>
-          <div className="uppercase font-semibold tracking-widest text-xl">
+          <Image
+            src="homeContent/kristianto.svg"
+            alt="Kristianto"
+            width={160}
+            height={160}
+            priority
+          />
+          <div className="uppercase font-semibold tracking-widest text-2xl">
             Kristianto 陈俊辉
           </div>
           <div className="font-semibold text-sm">
             The son of Mr. Amran & Mrs. Sucyati (+)
           </div>
           <div className="flex space-x-2">
-            <div className="rounded-full bg-slate-700 w-12 h-12"></div>
-            <div className="rounded-full bg-slate-700 w-12 h-12"></div>
+            <Link
+              href="https://www.linkedin.com/in/christiantochen"
+              target="_blank"
+            >
+              <Image
+                src="homeContent/linkedIn.svg"
+                alt="https://www.linkedin.com/in/christiantochen"
+                width={32}
+                height={32}
+                priority
+              />
+            </Link>
+            <Link
+              href="https://www.instagram.com/christianto_chen"
+              target="_blank"
+            >
+              <Image
+                src="homeContent/instagram.svg"
+                alt="https://www.instagram.com/christianto_chen"
+                width={32}
+                height={32}
+                priority
+              />
+            </Link>
           </div>
         </article>
+
         <article className="flex flex-col items-center space-y-4 w-full">
-          <div className="rounded-full bg-slate-700 w-40 h-40"></div>
-          <div className="uppercase font-semibold tracking-widest text-xl">
+          <Image
+            src="homeContent/stephanie.svg"
+            alt="Stephanie"
+            width={160}
+            height={160}
+            priority
+          />
+          <div className="uppercase font-semibold tracking-widest text-2xl">
             Stephanie 林友爱
           </div>
           <div className="font-semibold text-sm">
             The daughter of Mr. Liem Swie Lin & Mrs. Tan Fei Tjin
           </div>
           <div className="flex space-x-2">
-            <div className="rounded-full bg-slate-700 w-12 h-12"></div>
-            <div className="rounded-full bg-slate-700 w-12 h-12"></div>
+            <Link
+              href="https://www.linkedin.com/in/stephanieai"
+              target="_blank"
+            >
+              <Image
+                src="homeContent/linkedIn.svg"
+                alt="https://www.linkedin.com/in/stephanieai"
+                width={32}
+                height={32}
+                priority
+              />
+            </Link>
+            <Link
+              href="https://www.instagram.com/stephanie_aiai"
+              target="_blank"
+            >
+              <Image
+                src="homeContent/instagram.svg"
+                alt="https://www.instagram.com/stephanie_aiai"
+                width={32}
+                height={32}
+                priority
+              />
+            </Link>
           </div>
         </article>
-        <article className="flex flex-col items-center space-y-4 w-full">
-          <div className="text-xl text-center tracking tracking-widest font-bold">
+
+        <article className="flex flex-col items-center space-y-6 w-full">
+          <div className="text-2xl text-center tracking-widest font-bold">
             SAVE THE DATE & CELEBRATE WITH US
           </div>
-          <div className="text-xl text-center tracking tracking-widest font-bold">
+          <div className="text-xl text-center font-bold">
             Saturday, July 8th 2023
           </div>
-          <div className="bg-slate-700 w-full h-64"></div>
+          <Image
+            src="/homeContent/celebrate_with_us.svg"
+            alt="celebrate_with_us"
+            width={512}
+            height={256}
+            priority
+          />
           <button
             className="flex justify-center text-sm text-white mt-12 px-6 py-2 rounded-full cursor-pointer"
             style={{ background: "#50657F" }}
@@ -75,11 +141,40 @@ export default function HomeContent({ className }: { className?: string }) {
             Remind Me!
           </button>
         </article>
-        <article className="flex flex-col items-center space-y-4 w-full">
-          <div className="text-xl text-center tracking tracking-widest font-bold">
+
+        <article className="flex flex-col items-center space-y-6 w-full">
+          <div className="text-2xl text-center tracking-widest font-bold">
+            HOLY MATRIMONY
+          </div>
+          <div className="text-xl text-center font-bold">
+            Saturday, July 8th 2023
+            <br />4 PM GMT +7 / 16:00 WIB
+          </div>
+          <div className="text-center text-sm font-bold">
+            Since we held a private Holy Matrimony. Hence, we encourage you to
+            celebrate it through Youtube Live. Don’t forget to screenshot the
+            moment and tag us on our Instagram! :D
+          </div>
+          <Image
+            src="/homeContent/holy_matrimony.svg"
+            alt="holy_matrimony"
+            width={512}
+            height={256}
+            priority
+          />
+        </article>
+
+        <article className="flex flex-col items-center space-y-6 w-full">
+          <div className="text-2xl text-center tracking-widest font-bold">
             WEDDING RECEPTION
           </div>
-          <div className="bg-slate-700 w-full h-64"></div>
+          <Image
+            src="/homeContent/wedding_reception.svg"
+            alt="wedding_reception"
+            width={512}
+            height={256}
+            priority
+          />
           <div className="text-center font-bold">
             Saturday, July 8th 2023 <br />
             6 PM GMT +7 / 18:00 WIB <br />
@@ -98,56 +193,148 @@ export default function HomeContent({ className }: { className?: string }) {
           </div>
           <div className="flex justify-around w-full">
             <div className="flex flex-col items-center space-y-2">
-              <div className="rounded-full bg-slate-700 w-12 h-12"></div>
-              <div className="text-sm text-center font-bold">
+              <Image
+                src="homeContent/no_stilleto.svg"
+                alt="No Stilleto"
+                width={32}
+                height={32}
+                priority
+              />
+              <div className="text-xs text-center font-bold">
                 No
                 <br />
                 Stilleto
               </div>
             </div>
             <div className="flex flex-col items-center space-y-2">
-              <div className="rounded-full bg-slate-700 w-12 h-12"></div>
-              <div className="text-sm text-center font-bold">
+              <Image
+                src="homeContent/outfit.svg"
+                alt="Comfortable Outfit"
+                width={32}
+                height={32}
+                priority
+              />
+              <div className="text-xs text-center font-bold">
                 Comfortable
                 <br />
                 party outfit
               </div>
             </div>
             <div className="flex flex-col items-center space-y-2">
-              <div className="rounded-full bg-slate-700 w-12 h-12"></div>
-              <div className="text-sm text-center font-bold">
+              <Image
+                src="homeContent/2_person.svg"
+                alt="2 Person"
+                width={32}
+                height={32}
+                priority
+              />
+              <div className="text-xs text-center font-bold">
                 Valid for
                 <br />2 person
               </div>
             </div>
           </div>
         </article>
-        <article className="flex flex-col items-center space-y-4 w-full">
+
+        <article className="flex flex-col items-center space-y-2 w-full">
           <div className="text-center text-xl font-bold">
             “I love you more than coffee, but please don’t make me prove it. ”
           </div>
-          <div className="text-sm font-bold">Elizabeth Evans</div>
+          <div className="text-xs font-bold">Elizabeth Evans</div>
         </article>
+
         <article className="flex flex-col items-center space-y-4 w-full">
-          <div className="text-xl text-center tracking tracking-widest font-bold">
+          <div className="text-2xl text-center tracking-widest font-bold">
             OUR EPIC JOURNEY
           </div>
           <div className="bg-slate-700 w-full h-64"></div>
+          <table className="w-full our-epic-journey font-bold relative">
+            <Image
+              className="absolute -left-4 md:-left-6 lg:-left-8 top-1/3"
+              src="homeContent/daun_mirror.svg"
+              alt="Gold Line"
+              width={100}
+              height={60}
+              priority
+            />
+            <Image
+              className="absolute -right-4 md:-right-6 lg:-right-8 -bottom-8"
+              src="homeContent/daun.svg"
+              alt="Gold Line"
+              width={100}
+              height={60}
+              priority
+            />
+            <tr>
+              <td rowSpan={2} className="text-right">
+                2011
+              </td>
+              <td rowSpan={9} className="relative">
+                <Image
+                  className="absolute"
+                  src="homeContent/gold_line.svg"
+                  alt="Gold Line"
+                  fill
+                  priority
+                />
+              </td>
+              <td>Our first meet at Maranatha Christian University Bandung.</td>
+            </tr>
+            <tr>
+              <td>Growing together as community group in church.</td>
+            </tr>
+            <tr>
+              <td className="text-right">2015</td>
+              <td>Kris left Bandung to pursue his career in Jakarta.</td>
+            </tr>
+            <tr>
+              <td rowSpan={2} className="text-right">
+                2018
+              </td>
+              <td>Meeting again in Bandung and begin a relationship.</td>
+            </tr>
+            <tr>
+              <td>
+                Had a long distance relationship between Jakarta - Karawang.
+              </td>
+            </tr>
+            <tr>
+              <td rowSpan={2} className="text-right">
+                2020
+              </td>
+              <td>Commited to proceed a serious relationship.</td>
+            </tr>
+            <tr>
+              <td>
+                Starting a long distance relationship again (LOL) between
+                Tanjung Pinang - Solo.
+              </td>
+            </tr>
+            <tr>
+              <td className="text-right">12th Feb 2023</td>
+              <td>Engagement</td>
+            </tr>
+            <tr>
+              <td className="text-right">8th July 2023</td>
+              <td>Our big day with you!</td>
+            </tr>
+          </table>
         </article>
+
         <article className="flex flex-col items-center space-y-4 w-full">
-          <div className="text-xl text-center tracking tracking-widest font-bold">
+          <div className="text-2xl text-center tracking-widest font-bold">
             OUR HAPPINESS COLLECTION
           </div>
           <div className="bg-slate-700 w-full h-64"></div>
         </article>
         <article className="flex flex-col items-center space-y-4 w-full">
-          <div className="text-xl text-center tracking tracking-widest font-bold">
+          <div className="text-2xl text-center tracking-widest font-bold">
             WEDDING WISHES
           </div>
           <div className="bg-slate-700 w-full h-64"></div>
         </article>
         <article className="flex flex-col items-center space-y-4 w-full">
-          <div className="text-xl text-center tracking tracking-widest font-bold">
+          <div className="text-2xl text-center tracking-widest font-bold">
             WE APPRECIATE
             <br />
             YOUR BLESSING
@@ -165,7 +352,7 @@ export default function HomeContent({ className }: { className?: string }) {
           </button>
         </article>
         <article className="flex flex-col items-center space-y-4 w-full">
-          <div className="text-xl text-center tracking tracking-widest font-bold">
+          <div className="text-2xl text-center tracking-widest font-bold">
             THANK YOU
             <br />
             FOR YOUR SUPPORT
@@ -183,7 +370,7 @@ export default function HomeContent({ className }: { className?: string }) {
           </div>
           <div className="text-center text-sm">Song by Lorem Ipsum</div>
         </article>
-      </article>
+      </section>
     </section>
   );
 }
