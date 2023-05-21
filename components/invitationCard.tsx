@@ -61,8 +61,8 @@ export default function InvitationCard({
         <Image
           src="/monogram.svg"
           alt="monogram"
-          width={300}
-          height={300}
+          width={266}
+          height={267}
           priority
         />
         <p className="flex w-full justify-center text-lg mt-10">
@@ -76,8 +76,8 @@ export default function InvitationCard({
             className="absolute"
             src="invitationCard/gold_frame.svg"
             alt="gold_frame"
-            width={350}
-            height={90}
+            width={369}
+            height={99}
             priority
           />
           {displayName()}
