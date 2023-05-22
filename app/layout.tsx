@@ -1,7 +1,7 @@
 import "./globals.css";
 import { Lato } from "next/font/google";
 
-const inter = Lato({ weight: "300", subsets: ["latin"] });
+const lato = Lato({ weight: "300", subsets: ["latin"] });
 
 export const metadata = {
   title: "Kristianto & Stephanie",
@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={lato.className}>{children}</body>
     </html>
   );
 }

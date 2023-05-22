@@ -3,6 +3,10 @@ import Link from "next/link";
 import Countdown from "react-countdown";
 import { CountdownTimeDelta } from "react-countdown/dist/utils";
 
+import { Cormorant } from "next/font/google";
+
+const cormorant = Cormorant({ weight: "600", subsets: ["latin"] });
+
 export default function HomeContent({ className }: { className?: string }) {
   const renderer = ({ days, hours, minutes, seconds }: CountdownTimeDelta) => {
     return (
@@ -78,7 +82,7 @@ export default function HomeContent({ className }: { className?: string }) {
         height={584}
         priority
       />
-      <section className="flex flex-col items-center justify-center z-10 space-y-8 py-16 md:py-24 px-4 md:px-6 lg:px-8">
+      <section className="flex flex-col items-center justify-center z-10 space-y-8 pt-24 md:pt-36 pb-36 md:pb-56">
         <Image
           src="/monogram.svg"
           alt="monogram"
@@ -86,12 +90,14 @@ export default function HomeContent({ className }: { className?: string }) {
           height={128}
           priority
         />
-        <article className="flex flex-col items-center space-y-4 w-full">
-          <div className="text-center text-sm font-bold">
-            “Love never gives up, never loses faith, is always hopeful and
-            endures through every circumstance.”
-            <span className="block">- Corinthians 13:7 -</span>
+
+        <article className="flex flex-col items-center space-y-2 w-full">
+          <div className="text-center text font-bold">
+            “Love never gives up, never loses faith, is always hopeful
+            <br />
+            and endures through every circumstance.”
           </div>
+          <div className="text-xs font-bold">- Corinthians 13:7 -</div>
         </article>
 
         <article className="flex flex-col items-center space-y-4 w-full">
@@ -102,7 +108,9 @@ export default function HomeContent({ className }: { className?: string }) {
             height={160}
             priority
           />
-          <div className="uppercase font-semibold tracking-widest text-2xl">
+          <div
+            className={`uppercase font-semibold tracking-widest text-2xl ${cormorant.className}`}
+          >
             Kristianto 陈俊辉
           </div>
           <div className="font-semibold text-sm">
@@ -144,7 +152,9 @@ export default function HomeContent({ className }: { className?: string }) {
             height={160}
             priority
           />
-          <div className="uppercase font-semibold tracking-widest text-2xl">
+          <div
+            className={`uppercase font-semibold tracking-widest text-2xl ${cormorant.className}`}
+          >
             Stephanie 林友爱
           </div>
           <div className="font-semibold text-sm">
@@ -179,8 +189,11 @@ export default function HomeContent({ className }: { className?: string }) {
         </article>
 
         <article className="flex flex-col items-center space-y-6 w-full">
-          <div className="text-2xl text-center tracking-widest font-bold">
-            SAVE THE DATE & CELEBRATE WITH US
+          <div
+            className={`text-2xl text-center tracking-widest font-bold ${cormorant.className}`}
+          >
+            SAVE THE DATE &<br />
+            CELEBRATE WITH US
           </div>
           <div className="text-xl text-center font-bold">
             Saturday, July 8th 2023
@@ -212,8 +225,18 @@ export default function HomeContent({ className }: { className?: string }) {
           </Link>
         </article>
 
+        <Image
+          src="/homeContent/gold_line_vertical.svg"
+          alt="gold_line_vertical"
+          width={320}
+          height={3}
+          priority
+        />
+
         <article className="flex flex-col items-center space-y-6 w-full">
-          <div className="text-2xl text-center tracking-widest font-bold">
+          <div
+            className={`text-2xl text-center tracking-widest font-bold ${cormorant.className}`}
+          >
             HOLY MATRIMONY
           </div>
           <div className="text-xl text-center font-bold">
@@ -221,9 +244,13 @@ export default function HomeContent({ className }: { className?: string }) {
             <br />4 PM GMT +7 / 16:00 WIB
           </div>
           <div className="text-center text-sm font-bold">
-            Since we held a private Holy Matrimony. Hence, we encourage you to
-            celebrate it through Youtube Live. Don’t forget to screenshot the
-            moment and tag us on our Instagram! :D
+            Since we held a private Holy Matrimony. Hence, we
+            <br />
+            encourage you to celebrate it through Youtube Live.
+            <br />
+            Don’t forget to screenshot the moment and tag us on
+            <br />
+            our Instagram! :D
           </div>
           <Image
             src="/homeContent/holy_matrimony.svg"
@@ -235,10 +262,23 @@ export default function HomeContent({ className }: { className?: string }) {
           />
         </article>
 
-        <article className="flex flex-col items-center space-y-6 w-full">
-          <div className="text-2xl text-center tracking-widest font-bold">
-            WEDDING RECEPTION
+        <article className="flex flex-col items-center space-y-2 w-full">
+          <div className="text-center text-xl font-bold">
+            “A wedding is an event,
+            <br />
+            but a marriage is life”
           </div>
+          <div className="text-xs font-bold">Myles Munroe</div>
+        </article>
+
+        <article className="flex flex-col items-center space-y-6 w-full">
+          <Image
+            src="/homeContent/rose_wedding.svg"
+            alt="wedding_reception"
+            width={640}
+            height={172}
+            priority
+          />
           <Image
             src="/homeContent/wedding_reception.svg"
             alt="wedding_reception"
@@ -265,16 +305,17 @@ export default function HomeContent({ className }: { className?: string }) {
             </div>
           </Link>
           <div className="text-center text-sm font-bold">
-            It’s an outdoor wedding party, so we would recommend you to wear
-            your comfortable party outfit and shoes.
+            It’s an outdoor wedding party, so we would recommend
+            <br />
+            you to wear your comfortable party outfit and shoes.
           </div>
           <div className="flex justify-around w-full">
             <div className="flex flex-col items-center space-y-2">
               <Image
                 src="homeContent/no_stilleto.svg"
                 alt="No Stilleto"
-                width={40}
-                height={40}
+                width={48}
+                height={48}
                 priority
               />
               <div className="text-xs text-center font-bold">
@@ -287,8 +328,8 @@ export default function HomeContent({ className }: { className?: string }) {
               <Image
                 src="homeContent/outfit.svg"
                 alt="Comfortable Outfit"
-                width={40.5}
-                height={40}
+                width={48.5}
+                height={48}
                 priority
               />
               <div className="text-xs text-center font-bold">
@@ -301,8 +342,8 @@ export default function HomeContent({ className }: { className?: string }) {
               <Image
                 src="homeContent/2_person.svg"
                 alt="2 Person"
-                width={40}
-                height={40}
+                width={48}
+                height={48}
                 priority
               />
               <div className="text-xs text-center font-bold">
@@ -313,15 +354,10 @@ export default function HomeContent({ className }: { className?: string }) {
           </div>
         </article>
 
-        <article className="flex flex-col items-center space-y-2 w-full">
-          <div className="text-center text-xl font-bold">
-            “I love you more than coffee, but please don’t make me prove it. ”
-          </div>
-          <div className="text-xs font-bold">Elizabeth Evans</div>
-        </article>
-
         <article className="flex flex-col items-center space-y-6 w-full">
-          <div className="text-2xl text-center tracking-widest font-bold">
+          <div
+            className={`text-2xl text-center tracking-widest font-bold ${cormorant.className}`}
+          >
             OUR EPIC JOURNEY
           </div>
           <div className="bg-slate-700 w-full h-64"></div>
@@ -330,7 +366,7 @@ export default function HomeContent({ className }: { className?: string }) {
               <tr>
                 <td rowSpan={2} className="text-right">
                   <Image
-                    className="absolute -left-4 md:-left-6 lg:-left-8 top-1/3 -z-10"
+                    className="absolute left-0 top-1/3 -z-10"
                     src="homeContent/daun_mirror.svg"
                     alt="Gold Line"
                     width={120}
@@ -338,7 +374,7 @@ export default function HomeContent({ className }: { className?: string }) {
                     priority
                   />
                   <Image
-                    className="absolute -right-4 md:-right-6 lg:-right-8 -bottom-8"
+                    className="absolute right-0 -bottom-8"
                     src="homeContent/daun.svg"
                     alt="Gold Line"
                     width={102}
@@ -403,46 +439,66 @@ export default function HomeContent({ className }: { className?: string }) {
         </article>
 
         <article className="flex flex-col items-center space-y-6 w-full">
-          <div className="text-2xl text-center tracking-widest font-bold">
-            OUR HAPPINESS COLLECTION
+          <div
+            className={`text-2xl text-center tracking-widest font-bold ${cormorant.className}`}
+          >
+            OUR HAPPINESS
+            <br />
+            COLLECTION
           </div>
           <div className="bg-slate-700 w-full h-64"></div>
         </article>
 
         <article className="flex flex-col items-center space-y-6 w-full">
-          <div className="text-2xl text-center tracking-widest font-bold">
+          <div
+            className={`text-2xl text-center tracking-widest font-bold ${cormorant.className}`}
+          >
             WEDDING WISHES
           </div>
           <div className="bg-slate-700 w-full h-64"></div>
         </article>
 
         <article className="flex flex-col items-center space-y-6 w-full">
-          <div className="text-2xl text-center tracking-widest font-bold">
+          <div
+            className={`text-2xl text-center tracking-widest font-bold ${cormorant.className}`}
+          >
             WE APPRECIATE
             <br />
             YOUR BLESSING
           </div>
           <div className="text-sm font-bold text-center">
-            Your kind blessing can be sent to this information below. Also
-            please fill your address information so that we can send you a
-            gratitude gift.
+            Your kind blessing can be sent to this information below.
+            <br />
+            Also please fill your address information so that we can
+            <br />
+            send you a gratitude gift.
           </div>
           <button
             className="flex justify-center text-sm text-white mt-12 px-6 py-2 rounded-full cursor-pointer"
             style={{ background: "#50657F" }}
           >
-            Send Blessing Gift
+            Bank Transfer
           </button>
         </article>
 
+        <Image
+          src="/homeContent/gold_line_vertical.svg"
+          alt="gold_line_vertical"
+          width={320}
+          height={3}
+          priority
+        />
+
         <article className="flex flex-col items-center space-y-6 w-full">
-          <div className="text-2xl text-center tracking-widest font-bold">
+          <div
+            className={`text-2xl text-center tracking-widest font-bold ${cormorant.className}`}
+          >
             THANK YOU
             <br />
             FOR YOUR SUPPORT
             <br />& PRAYER
           </div>
-          <div className="text-sm font-bold text-center">
+          <div className="font-bold text-center">
             Warm regards,
             <br />
             Kristianto & Stephanie
