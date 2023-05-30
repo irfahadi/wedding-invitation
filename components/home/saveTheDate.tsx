@@ -90,7 +90,7 @@ export default function SaveTheDate({
       <Countdown date={new Date(2023, 6, 8, 18, 0, 0)} renderer={renderer} />
       <Link
         href={
-          "https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20230708T110000Z%2F20230708T140000Z&details=&location=Jl.%20Adi%20Sucipto%20No.56%2C%20Gatak%2C%20Gajahan%2C%20Kec.%20Colomadu%2C%20Kabupaten%20Karanganyar%2C%20Jawa%20Tengah%2057716&text=Kristianto%20%26%20Stephanie%20Wedding"
+          "https://calendar.google.com/render?action=TEMPLATE&text=Kristianto+%26+Stephanie+Wedding&location=Ramada+Suites+By+Wyndham+Solo%2C+Jalan+Adi+Sucipto%2C+Gatak%2C+Gajahan%2C+Karanganyar+Regency%2C+Central+Java&dates=20230708T110000Z%2F20230708T140000Z"
         }
         target="_blank"
       >
