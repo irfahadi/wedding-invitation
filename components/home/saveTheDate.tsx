@@ -80,11 +80,10 @@ export default function SaveTheDate({
         Saturday, July 8th 2023
       </div>
       <Image
-        src="/homeContent/celebrate_with_us.svg"
+        src="/homeContent/celebrate_with_us.jpg"
         alt="celebrate_with_us"
         width={512}
         height={256}
-        priority
         style={{ width: "auto", height: "auto" }}
       />
       <Countdown date={new Date(2023, 6, 8, 18, 0, 0)} renderer={renderer} />

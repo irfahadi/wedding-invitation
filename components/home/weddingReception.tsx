@@ -17,11 +17,10 @@ export default function WeddingReception({
         priority
       />
       <Image
-        src="/homeContent/wedding_reception.svg"
+        src="/homeContent/wedding_reception.jpg"
         alt="wedding_reception"
         width={512}
         height={256}
-        priority
         style={{ width: "auto", height: "auto" }}
       />
       <div className="text-center font-bold">

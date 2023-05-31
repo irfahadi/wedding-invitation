@@ -20,10 +20,11 @@ export default function Profile({
   return (
     <article className={className}>
       <Image
-        src={`homeContent/${picture}.svg`}
+        src={`/homeContent/${picture}.jpg`}
         alt={`${name}`}
         width={160}
         height={160}
+        className="rounded-full w-40 h-40 object-cover"
         priority
       />
       <Title className="uppercase">{name}</Title>
@@ -31,7 +32,7 @@ export default function Profile({
       <div className="flex space-x-2">
         <Link href={`https://www.linkedin.com/in/${linkedIn}`} target="_blank">
           <Image
-            src="homeContent/linkedIn.svg"
+            src="/homeContent/linkedIn.svg"
             alt={`https://www.linkedin.com/in/${linkedIn}`}
             width={32}
             height={32}
@@ -40,7 +41,7 @@ export default function Profile({
         </Link>
         <Link href={`https://www.instagram.com/${instagram}`} target="_blank">
           <Image
-            src="homeContent/instagram.svg"
+            src="/homeContent/instagram.svg"
             alt={`https://www.instagram.com/${instagram}`}
             width={32}
             height={32}

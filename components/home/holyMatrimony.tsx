@@ -26,11 +26,10 @@ export default function HolyMatrimony({
         our Instagram! :D
       </div>
       <Image
-        src="/homeContent/holy_matrimony.svg"
+        src="/homeContent/holy_matrimony.jpg"
         alt="holy_matrimony"
         width={512}
         height={256}
-        priority
         style={{ width: "auto", height: "auto" }}
       />
     </article>
