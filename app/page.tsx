@@ -1,25 +1,42 @@
 "use client";
 
 import InvitationCard from "@/components/invitationCard";
-import { useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { ReadonlyURLSearchParams, useSearchParams } from "next/navigation";
 import HomeContent from "@/components/homeContent";
+import useLocalStorage from "@/hooks/useLocalStorage";
+import { useEffect, useState } from "react";
 
 export default function IndexPage() {
-  const searchParams = useSearchParams();
-  const [invitationIsOpen, setInvitationIsOpen] = useState(false);
+  const [params, setParams] = useLocalStorage("params", undefined);
+  const [searchParams, setSearchParams] = useState<
+    ReadonlyURLSearchParams | URLSearchParams
+  >(useSearchParams());
+  const [invitationIsOpen, setInvitationIsOpen] = useLocalStorage(
+    "invitationIsOpen",
+    false
+  );
 
   const openInvitation = () => {
     setInvitationIsOpen(!invitationIsOpen);
   };
 
+  useEffect(() => {
+    const searchParamsStr = searchParams.toString();
+
+    if (searchParamsStr !== "") {
+      setParams(searchParamsStr);
+    } else if (params) {
+      setSearchParams(new URLSearchParams(params));
+    }
+  }, [searchParams, params, setParams]);
+
   return (
-    <main className="overflow-x-hidden">
+    <>
       {invitationIsOpen && (
-        <HomeContent className="flex flex-col min-h-screen max-w-screen-sm items-center justify-center bg-white mx-auto relative shadow-lg" />
+        <HomeContent className="flex flex-col max-w-screen-sm items-center justify-center bg-white mx-auto relative shadow-lg" />
       )}
       <InvitationCard
-        className={`flex flex-col min-h-screen max-w-screen-sm items-center justify-center bg-white z-10 mx-auto invitation-card shadow-lg ${
+        className={`flex flex-col max-w-screen-sm items-center justify-center bg-white z-10 mx-auto invitation-card shadow-lg ${
           invitationIsOpen ? "hide" : ""
         }`}
         to={searchParams.get("to")}
@@ -29,6 +46,6 @@ export default function IndexPage() {
         partnerName={searchParams.get("pm")}
         openInvitation={openInvitation}
       />
-    </main>
+    </>
   );
 }

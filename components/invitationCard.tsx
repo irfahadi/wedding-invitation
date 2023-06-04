@@ -40,10 +40,10 @@ export default function InvitationCard({
   };
 
   return (
-    <section className={className} style={style}>
+    <main className={className} style={style}>
       <Image
         className="absolute top-0"
-        src="top_ornaments.svg"
+        src="/top_ornaments.svg"
         alt="top_ornaments"
         width={1080}
         height={584}
@@ -51,7 +51,7 @@ export default function InvitationCard({
       />
       <Image
         className="absolute bottom-0"
-        src="bottom_ornaments.svg"
+        src="/bottom_ornaments.svg"
         alt="bottom_ornaments"
         width={1080}
         height={584}
@@ -61,8 +61,8 @@ export default function InvitationCard({
         <Image
           src="/monogram.svg"
           alt="monogram"
-          width={266}
-          height={267}
+          width={200}
+          height={200.75}
           priority
         />
         <p className="flex w-full justify-center text-lg mt-10">
@@ -74,10 +74,10 @@ export default function InvitationCard({
         >
           <Image
             className="absolute"
-            src="invitationCard/gold_frame.svg"
+            src="/invitationCard/gold_frame.svg"
             alt="gold_frame"
-            width={369}
-            height={99}
+            width={276.75}
+            height={75}
             priority
           />
           {displayName()}
@@ -94,6 +94,6 @@ export default function InvitationCard({
           Open Invitation
         </button>
       </article>
-    </section>
+    </main>
   );
 }

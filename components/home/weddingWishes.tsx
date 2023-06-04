@@ -10,7 +10,6 @@ export default function WeddingWishes({
   return (
     <article className={className}>
       {children || <Title>WEDDING WISHES</Title>}
-      <div className="bg-slate-700 w-full h-64"></div>
     </article>
   );
 }

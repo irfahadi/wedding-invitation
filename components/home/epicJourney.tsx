@@ -12,8 +12,7 @@ export default function EpicJourney({
     <article className={className}>
       {children || <Title>OUR EPIC JOURNEY</Title>}
 
-      <div className="bg-slate-700 w-full h-64"></div>
-      <table className="w-full our-epic-journey font-bold relative">
+      <table className="w-full our-epic-journey font-normal relative">
         <tbody>
           <tr>
             <td rowSpan={2} className="text-right">

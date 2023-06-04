@@ -12,10 +12,10 @@ import WeddingReception from "./home/weddingReception";
 
 export default function HomeContent({ className }: { className?: string }) {
   return (
-    <section className={className}>
+    <main className={className}>
       <Image
         className="absolute top-0"
-        src="top_ornaments.svg"
+        src="/top_ornaments.svg"
         alt="top_ornaments"
         width={1080}
         height={584}
@@ -23,7 +23,7 @@ export default function HomeContent({ className }: { className?: string }) {
       />
       <Image
         className="absolute bottom-0"
-        src="bottom_ornaments.svg"
+        src="/bottom_ornaments.svg"
         alt="bottom_ornaments"
         width={1080}
         height={584}
@@ -39,12 +39,12 @@ export default function HomeContent({ className }: { className?: string }) {
         />
 
         <article className="flex flex-col items-center space-y-2 w-full">
-          <div className="text-center text font-bold">
+          <div className="text-center text font-normal">
             “Love never gives up, never loses faith, is always hopeful
             <br />
             and endures through every circumstance.”
           </div>
-          <div className="text-xs font-bold">- Corinthians 13:7 -</div>
+          <div className="text-xs font-normal">- Corinthians 13:7 -</div>
         </article>
 
         <Profile
@@ -77,12 +77,12 @@ export default function HomeContent({ className }: { className?: string }) {
         <HolyMatrimony className="flex flex-col items-center space-y-6 w-full" />
 
         <article className="flex flex-col items-center space-y-2 w-full">
-          <div className="text-center text-xl font-bold">
+          <div className="text-center text-xl font-normal">
             “A wedding is an event,
             <br />
             but a marriage is life”
           </div>
-          <div className="text-xs font-bold">Myles Munroe</div>
+          <div className="text-xs font-normal">Myles Munroe</div>
         </article>
 
         <WeddingReception className="flex flex-col items-center space-y-6 w-full" />
@@ -108,6 +108,6 @@ export default function HomeContent({ className }: { className?: string }) {
           <div className="text-center text-sm">Song by Lorem Ipsum</div>
         </article>
       </section>
-    </section>
+    </main>
   );
 }

@@ -18,7 +18,7 @@ export default function ThankYou({
         </Title>
       )}
 
-      <div className="font-bold text-center">
+      <div className="font-normal text-center">
         Warm regards,
         <br />
         Kristianto & Stephanie

@@ -1,7 +1,8 @@
+import Head from "next/head";
 import "./globals.css";
 import { Lato } from "next/font/google";
 
-const lato = Lato({ weight: "300", subsets: ["latin"] });
+const lato = Lato({ weight: ["300", "400", "700"], subsets: ["latin"] });
 
 export const metadata = {
   title: "Kristianto & Stephanie",

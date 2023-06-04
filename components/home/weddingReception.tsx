@@ -23,7 +23,7 @@ export default function WeddingReception({
         height={256}
         style={{ width: "auto", height: "auto" }}
       />
-      <div className="text-center font-bold">
+      <div className="text-center font-normal">
         Saturday, July 8th 2023 <br />
         6 PM GMT +7 / 18:00 WIB <br />
         Ramada Suites By Wyndham Solo <br />
@@ -40,7 +40,7 @@ export default function WeddingReception({
           Map Location
         </div>
       </Link>
-      <div className="text-center text-sm font-bold">
+      <div className="text-center text-sm font-normal">
         It’s an outdoor wedding party, so we would recommend
         <br />
         you to wear your comfortable party outfit and shoes.
@@ -54,7 +54,7 @@ export default function WeddingReception({
             height={48}
             priority
           />
-          <div className="text-xs text-center font-bold">
+          <div className="text-xs text-center font-normal">
             No
             <br />
             Stilleto
@@ -68,7 +68,7 @@ export default function WeddingReception({
             height={48}
             priority
           />
-          <div className="text-xs text-center font-bold">
+          <div className="text-xs text-center font-normal">
             Comfortable
             <br />
             party outfit
@@ -82,7 +82,7 @@ export default function WeddingReception({
             height={48}
             priority
           />
-          <div className="text-xs text-center font-bold">
+          <div className="text-xs text-center font-normal">
             Valid for
             <br />2 person
           </div>

@@ -12,7 +12,7 @@ export default function SaveTheDate({
 }) {
   const renderer = ({ days, hours, minutes, seconds }: CountdownTimeDelta) => {
     return (
-      <div className="flex flex-col space-y-2 font-bold">
+      <div className="flex flex-col space-y-2 font-normal">
         <div className="flex flex-row space-x-4">
           <div
             className="flex items-center justify-center border"
@@ -76,7 +76,7 @@ export default function SaveTheDate({
         </Title>
       )}
 
-      <div className="text-xl text-center font-bold">
+      <div className="text-xl text-center font-normal">
         Saturday, July 8th 2023
       </div>
       <Image

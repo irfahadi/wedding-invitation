@@ -28,7 +28,7 @@ export default function Profile({
         priority
       />
       <Title className="uppercase">{name}</Title>
-      <div className="font-semibold text-sm">{title}</div>
+      <div className="font-normal text-sm">{title}</div>
       <div className="flex space-x-2">
         <Link href={`https://www.linkedin.com/in/${linkedIn}`} target="_blank">
           <Image

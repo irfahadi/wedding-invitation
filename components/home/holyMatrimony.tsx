@@ -12,11 +12,11 @@ export default function HolyMatrimony({
     <article className={className}>
       {children || <Title>HOLY MATRIMONY</Title>}
 
-      <div className="text-xl text-center font-bold">
+      <div className="text-xl text-center font-normal">
         Saturday, July 8th 2023
         <br />4 PM GMT +7 / 16:00 WIB
       </div>
-      <div className="text-center text-sm font-bold">
+      <div className="text-center text-sm font-normal">
         Since we held a private Holy Matrimony. Hence, we
         <br />
         encourage you to celebrate it through Youtube Live.
