@@ -61,5 +61,5 @@ body {
 .our-epic-journey td:last-child {
   width: 63%;
   vertical-align: top;
-  padding-bottom: 16px;
+  @apply pb-4 pr-8;
 }

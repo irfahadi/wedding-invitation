@@ -9,10 +9,17 @@ import Profile from "./home/profile";
 import HolyMatrimony from "./home/holyMatrimony";
 import SaveTheDate from "./home/saveTheDate";
 import WeddingReception from "./home/weddingReception";
+import { CSSProperties } from "react";
 
-export default function HomeContent({ className }: { className?: string }) {
+export default function HomeContent({
+  className,
+  style,
+}: {
+  className?: string;
+  style?: CSSProperties;
+}) {
   return (
-    <main className={className}>
+    <section className={className} style={style}>
       <Image
         className="absolute top-0"
         src="/top_ornaments.svg"
@@ -29,7 +36,7 @@ export default function HomeContent({ className }: { className?: string }) {
         height={584}
         priority
       />
-      <section className="flex flex-col items-center justify-center z-10 space-y-8 pt-24 md:pt-36 pb-36 md:pb-56">
+      <section className="flex flex-col items-center justify-center z-10 space-y-8 pt-24 md:pt-36 pb-36 md:pb-48">
         <Image
           src="/monogram.svg"
           alt="monogram"
@@ -38,13 +45,13 @@ export default function HomeContent({ className }: { className?: string }) {
           priority
         />
 
-        <article className="flex flex-col items-center space-y-2 w-full">
-          <div className="text-center text font-normal">
+        <article className="flex flex-col items-center space-y-2 w-full px-8">
+          <div className="text-center text-xs md:text-sm font-normal">
             “Love never gives up, never loses faith, is always hopeful
             <br />
             and endures through every circumstance.”
+            <br />- Corinthians 13:7 -
           </div>
-          <div className="text-xs font-normal">- Corinthians 13:7 -</div>
         </article>
 
         <Profile
@@ -101,13 +108,30 @@ export default function HomeContent({ className }: { className?: string }) {
 
         <ThankYou className="flex flex-col items-center space-y-6 w-full" />
 
-        <article className="flex flex-col items-center space-y-2 w-full">
+        <article className="flex flex-col items-center space-y-0 w-full pt-8">
           <div className="text-center text-sm">
-            © 2023 Kristianto & Stephanie. All Rights Reserved
+            © 2023 Kristianto & Stephanie <b>#STEPcloserwithKRIS</b>
           </div>
-          <div className="text-center text-sm">Song by Lorem Ipsum</div>
+          <div className="text-center text-sm">
+            Photo and Video by <b>@elysian.picture</b>
+          </div>
+          <div className="text-center text-sm">
+            Invitation by <b>Kristianto & Stephanie</b>
+          </div>
+          <div className="text-center text-sm space-x-1">
+            <span>Song</span>
+            <span className="font-normal">Can`t Help Falling in Love</span>
+            <span>by</span>
+            <a
+              className="font-normal underline"
+              href="https://open.spotify.com/artist/3NuX2HNLS62uUmkVGBQYzP?si=I-ZtSRbbSweeFEa7T2_VtQ"
+              target="_blank"
+            >
+              INST
+            </a>
+          </div>
         </article>
       </section>
-    </main>
+    </section>
   );
 }

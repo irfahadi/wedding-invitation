@@ -5,9 +5,12 @@ import { ReadonlyURLSearchParams, useSearchParams } from "next/navigation";
 import HomeContent from "@/components/homeContent";
 import useLocalStorage from "@/hooks/useLocalStorage";
 import { useEffect, useState } from "react";
+import Toast from "@/components/toast";
+import Music from "@/components/music";
 
 export default function IndexPage() {
   const [params, setParams] = useLocalStorage("params", undefined);
+  const [loading, setLoading] = useState(true);
   const [searchParams, setSearchParams] = useState<
     ReadonlyURLSearchParams | URLSearchParams
   >(useSearchParams());
@@ -28,13 +31,16 @@ export default function IndexPage() {
     } else if (params) {
       setSearchParams(new URLSearchParams(params));
     }
+
+    setLoading(false);
   }, [searchParams, params, setParams]);
+
+  if (loading) return;
 
   return (
     <>
-      {invitationIsOpen && (
-        <HomeContent className="flex flex-col max-w-screen-sm items-center justify-center bg-white mx-auto relative shadow-lg" />
-      )}
+      <Toast />
+      <HomeContent className="flex flex-col max-w-screen-sm items-center justify-center bg-white mx-auto relative shadow-lg" />
       <InvitationCard
         className={`flex flex-col max-w-screen-sm items-center justify-center bg-white z-10 mx-auto invitation-card shadow-lg ${
           invitationIsOpen ? "hide" : ""
@@ -46,6 +52,7 @@ export default function IndexPage() {
         partnerName={searchParams.get("pm")}
         openInvitation={openInvitation}
       />
+      <Music />
     </>
   );
 }

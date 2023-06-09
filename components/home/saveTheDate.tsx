@@ -82,8 +82,8 @@ export default function SaveTheDate({
       <Image
         src="/homeContent/celebrate_with_us.jpg"
         alt="celebrate_with_us"
-        width={512}
-        height={256}
+        width={640}
+        height={360}
         style={{ width: "auto", height: "auto" }}
       />
       <Countdown date={new Date(2023, 6, 8, 18, 0, 0)} renderer={renderer} />

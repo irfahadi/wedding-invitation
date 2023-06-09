@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Title from "../title";
 import Link from "next/link";
 
 export default function WeddingReception({
@@ -19,8 +18,8 @@ export default function WeddingReception({
       <Image
         src="/homeContent/wedding_reception.jpg"
         alt="wedding_reception"
-        width={512}
-        height={256}
+        width={640}
+        height={360}
         style={{ width: "auto", height: "auto" }}
       />
       <div className="text-center font-normal">
@@ -40,12 +39,13 @@ export default function WeddingReception({
           Map Location
         </div>
       </Link>
-      <div className="text-center text-sm font-normal">
-        It’s an outdoor wedding party, so we would recommend
+      <div className="text-center text-sm font-normal px-8">
+        It’s an outdoor wedding party, so we would recommend you to wear your
+        comfortable
         <br />
-        you to wear your comfortable party outfit and shoes.
+        party outfit and shoes.
       </div>
-      <div className="flex justify-around w-full">
+      <div className="flex items-center justify-center w-full space-x-8">
         <div className="flex flex-col items-center space-y-2">
           <Image
             src="homeContent/no_stilleto.svg"

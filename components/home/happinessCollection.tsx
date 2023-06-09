@@ -15,16 +15,16 @@ export default function HappinessCollection({
     { className: "col-span-2", picture: "1", width: 542, height: 305 },
     { className: "", picture: "2", width: 463, height: 261 },
     { className: "", picture: "3", width: 463, height: 261 },
-    { className: "col-span-2", picture: "4",  width: 542, height: 305 },
-    { className: "", picture: "5",  width: 542, height: 305 },
+    { className: "col-span-2", picture: "4", width: 542, height: 305 },
+    { className: "", picture: "5", width: 542, height: 305 },
     {
       className: "row-span-3",
       picture: "6",
       width: 2731,
       height: 4096,
     },
-    { className: "", picture: "7",  width: 542, height: 305 },
-    { className: "", picture: "8",  width: 542, height: 305 },
+    { className: "", picture: "7", width: 542, height: 305 },
+    { className: "", picture: "8", width: 542, height: 305 },
   ];
 
   return (
@@ -37,11 +37,14 @@ export default function HappinessCollection({
         </Title>
       )}
 
-      <div className="w-full px-4 grid grid-cols-2 gap-2">
+      <div className="w-full px-4 grid grid-cols-2 gap-4">
         {images.map(({ className, picture, width, height }, index) => (
           <Image
             key={index}
-            className={[className, "cursor-pointer object-cover w-full h-full"].join(" ")}
+            className={[
+              className,
+              "cursor-pointer object-cover w-full h-full",
+            ].join(" ")}
             src={`/homeContent/happinessCollection/${picture}.jpg`}
             alt={picture}
             width={width}

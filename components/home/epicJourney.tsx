@@ -12,6 +12,15 @@ export default function EpicJourney({
     <article className={className}>
       {children || <Title>OUR EPIC JOURNEY</Title>}
 
+      <iframe
+        width="640"
+        height="320"
+        src="https://www.youtube.com/embed/cJLEemvirnw"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+        style={{ border: 0 }}
+      />
       <table className="w-full our-epic-journey font-normal relative">
         <tbody>
           <tr>

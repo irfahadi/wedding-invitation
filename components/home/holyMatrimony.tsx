@@ -28,8 +28,8 @@ export default function HolyMatrimony({
       <Image
         src="/homeContent/holy_matrimony.jpg"
         alt="holy_matrimony"
-        width={512}
-        height={256}
+        width={640}
+        height={360}
         style={{ width: "auto", height: "auto" }}
       />
     </article>
