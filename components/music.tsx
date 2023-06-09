@@ -1,23 +1,49 @@
 import useLocalStorage from "@/hooks/useLocalStorage";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { FaPause, FaPlay } from "react-icons/fa";
 
 export default function Music() {
   const [playing, setPlaying] = useLocalStorage("autoPlay", true);
+  const [firstTimeInteract, setFirstTimeInteract] = useState(false);
 
   const toggleAudio = () => {
     setPlaying(!playing);
   };
 
   useEffect(() => {
-    const audioEl: any = document.getElementsByClassName("audio-element")[0];
+    const triggerFirstTimeInteract = () => {
+      if (!firstTimeInteract) {
+        setFirstTimeInteract(true);
+        document.removeEventListener("mousedown", triggerFirstTimeInteract);
+      }
+    };
 
-    if (playing) {
-      audioEl.play();
-    } else {
-      audioEl.pause();
+    document.addEventListener("mousedown", triggerFirstTimeInteract);
+
+    return () => {
+      document.removeEventListener("mousedown", triggerFirstTimeInteract);
+    };
+  }, []);
+
+  useEffect(() => {
+    const playTrigger = () => {
+      const audioEl = document.getElementsByClassName(
+        "audio-element"
+      )[0] as HTMLAudioElement;
+
+      if (playing && audioEl.paused) {
+        audioEl.play();
+      } else if (!playing && !audioEl.paused) {
+        audioEl.pause();
+      }
+    };
+
+    console.log("trigger", firstTimeInteract, playing);
+
+    if (firstTimeInteract) {
+      playTrigger();
     }
-  }, [playing]);
+  }, [playing, firstTimeInteract]);
 
   return (
     <>
@@ -30,7 +56,7 @@ export default function Music() {
           {playing ? <FaPause /> : <FaPlay />}
         </button>
       </div>
-      <audio className="audio-element">
+      <audio className="audio-element" autoPlay loop>
         <source src="/looping.mp3"></source>
       </audio>
     </>

@@ -17,7 +17,7 @@ export default function EpicJourney({
         height="320"
         src="https://www.youtube.com/embed/cJLEemvirnw"
         title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
         style={{ border: 0 }}
       />
