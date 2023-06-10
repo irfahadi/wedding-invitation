@@ -38,8 +38,6 @@ export default function Music() {
       }
     };
 
-    console.log("trigger", firstTimeInteract, playing);
-
     if (firstTimeInteract) {
       playTrigger();
     }

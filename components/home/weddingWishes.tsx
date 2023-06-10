@@ -25,7 +25,7 @@ export default function WeddingWishes({
         download: true,
         header: true,
         complete: ({ data }: { data: any[] }) => {
-          setData(data);
+          setData(data.reverse());
         },
       }
     );
@@ -141,14 +141,14 @@ export default function WeddingWishes({
           maxHeight: 500,
         }}
       >
-        {data?.reverse().map((d: any, i) => {
+        {data?.map((d: any, i) => {
           return (
-            <div key={i} className="flex flex-col space-y-2 text-sm">
+            <div key={i} className="flex flex-col space-y-2 text-sm w-full">
               <div className="flex items-center space-x-2 font-normal">
                 <FaUser style={{ color: "#E9D3AE" }} />
                 <span>{d.name}</span>
               </div>
-              <span className="text-justify w-full">{d.wishes}</span>
+              <span className="text-justify">{d.wishes}</span>
             </div>
           );
         })}
