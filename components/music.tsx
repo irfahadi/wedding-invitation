@@ -45,7 +45,7 @@ export default function Music() {
 
   return (
     <>
-      <div className="fixed top-8 right-8">
+      <div className="fixed top-8 right-8 z-20">
         <button
           className="p-2 rounded-full shadow-lg"
           style={{ color: "#262262", background: "white" }}
