@@ -3,18 +3,21 @@
 import InvitationCard from "@/components/invitationCard";
 import { ReadonlyURLSearchParams, useSearchParams } from "next/navigation";
 import HomeContent from "@/components/homeContent";
-import useLocalStorage from "@/hooks/useLocalStorage";
 import { useEffect, useState } from "react";
 import Toast from "@/components/toast";
 import Music from "@/components/music";
+import { useCookieState } from "use-cookie-state";
 
 export default function IndexPage() {
-  const [params, setParams] = useLocalStorage("params", undefined);
+  const [params, setParams] = useCookieState<string | undefined>(
+    "params",
+    undefined
+  );
   const [loading, setLoading] = useState(true);
   const [searchParams, setSearchParams] = useState<
     ReadonlyURLSearchParams | URLSearchParams
   >(useSearchParams());
-  const [invitationIsOpen, setInvitationIsOpen] = useLocalStorage(
+  const [invitationIsOpen, setInvitationIsOpen] = useCookieState<boolean>(
     "invitationIsOpen",
     false
   );

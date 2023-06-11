@@ -2,8 +2,7 @@ import Image from "next/image";
 import Title from "../title";
 import useLightbox from "@/hooks/useLightbox";
 import { Transition } from "@headlessui/react";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { useInView } from "react-intersection-observer";
+import TransitionWrapper from "../transitionWrapper";
 
 export default function HappinessCollection({
   className,
@@ -29,63 +28,33 @@ export default function HappinessCollection({
     { className: "", picture: "7", width: 542, height: 305 },
     { className: "", picture: "8", width: 542, height: 305 },
   ];
-  const ref = useRef<HTMLElement>();
-  const [show, setShow] = useState(false);
-  const { ref: inViewRef, inView } = useInView();
-
-  // Use `useCallback` so we don't recreate the function on each render
-  const setRefs = useCallback(
-    (node: HTMLElement) => {
-      // Ref's from useRef needs to have the node assigned to `current`
-      ref.current = node;
-      // Callback refs, like the one from `useInView`, is a function that takes the node as an argument
-      inViewRef(node);
-    },
-    [inViewRef]
-  );
-
-  useEffect(() => {
-    if (inView && !show) setShow(true);
-  }, [inView, show]);
 
   return (
-    <article id="happiness_collection" ref={setRefs}>
-      <Transition.Root className={className} show={show}>
-        <Transition.Child
-          enter="transition-all ease-in-out duration-1000 delay-[300ms]"
-          enterFrom="opacity-0 translate-y-6"
-          enterTo="opacity-100 translate-y-0"
-        >
-          {children || (
-            <Title>
-              OUR HAPPINESS
-              <br />
-              COLLECTION
-            </Title>
-          )}
-        </Transition.Child>
+    <TransitionWrapper id="happiness_collection" className={className}>
+      {children || (
+        <Title>
+          OUR HAPPINESS
+          <br />
+          COLLECTION
+        </Title>
+      )}
 
-        <div className="w-full px-4 grid grid-cols-2 gap-4">
-          {images.map(({ className, picture, width, height }, index) => (
-            <Transition.Child
-              key={index}
-              className={className}
-              enter="transition-all ease-in-out duration-1000 delay-[300ms]"
-              enterFrom={`opacity-0 translate-x-${index % 2 === 0 ? 6 : -6}`}
-              enterTo="opacity-100 translate-x-0"
-            >
-              <Image
-                className="cursor-pointer object-cover w-full h-full"
-                src={`/homeContent/happinessCollection/${picture}.jpg`}
-                alt={picture}
-                width={width}
-                height={height}
-                onClick={() => openLightbox(index)}
-              />
-            </Transition.Child>
-          ))}
-        </div>
-      </Transition.Root>
+      <div className="w-full px-2 md:px-4 grid grid-cols-2 gap-2 md:gap-4">
+        {images.map(({ className, picture, width, height }, index) => (
+          <Image
+            key={index}
+            className={[
+              className,
+              "cursor-pointer object-cover w-full h-full",
+            ].join(" ")}
+            src={`/homeContent/happinessCollection/${picture}.jpg`}
+            alt={picture}
+            width={width}
+            height={height}
+            onClick={() => openLightbox(index)}
+          />
+        ))}
+      </div>
       {renderLightbox({
         slides: images.map((image) => {
           const width = image.width * 4;
@@ -97,6 +66,6 @@ export default function HappinessCollection({
           };
         }),
       })}
-    </article>
+    </TransitionWrapper>
   );
 }

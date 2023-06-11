@@ -1,9 +1,10 @@
 import Title from "../title";
 import { FaPencilAlt, FaUser } from "react-icons/fa";
-import useLocalStorage from "@/hooks/useLocalStorage";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { toast } from "react-hot-toast";
 import Papa from "papaparse";
+import { useCookieState } from "use-cookie-state";
+import TransitionWrapper from "../transitionWrapper";
 
 export default function WeddingWishes({
   className,
@@ -12,7 +13,7 @@ export default function WeddingWishes({
   className?: string;
   children?: React.ReactNode;
 }) {
-  const [params] = useLocalStorage("params", undefined);
+  const [params] = useCookieState("params", undefined);
   const [name, setName] = useState<string>();
   const [loading, setLoading] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
@@ -67,13 +68,7 @@ export default function WeddingWishes({
 
   return (
     <>
-      <form
-        className={[className, "w-full"].join(" ")}
-        method="post"
-        name="google-sheet"
-        ref={formRef}
-        onSubmit={onFormSubmit}
-      >
+      <TransitionWrapper id="wedding_wishes_form" className={className}>
         {children || <Title>WEDDING WISHES</Title>}
 
         <div className="text-center text-sm font-normal">
@@ -81,64 +76,75 @@ export default function WeddingWishes({
           new awesome journey ahead!
         </div>
 
-        <div
-          className="flex w-3/4 items-center justify-center px-2 space-x-2 border-b"
-          style={{ borderColor: "#E9D3AE" }}
+        <form
+          className="w-3/4"
+          method="post"
+          name="google-sheet"
+          ref={formRef}
+          onSubmit={onFormSubmit}
         >
-          <FaUser style={{ color: "#E9D3AE" }} />
-          <input
-            name="name"
-            className="p-2 w-full bg-transparent outline-none"
-            placeholder="Name"
-            required
-            defaultValue={name}
-          />
-        </div>
+          <div
+            className="flex items-center justify-center px-2 space-x-2 border-b"
+            style={{ borderColor: "#E9D3AE" }}
+          >
+            <FaUser style={{ color: "#E9D3AE" }} />
+            <input
+              name="name"
+              className="p-2 w-full bg-transparent outline-none"
+              placeholder="Name"
+              required
+              defaultValue={name}
+            />
+          </div>
 
-        <div
-          className="flex w-3/4 justify-center px-2 space-x-2 border-b"
-          style={{ borderColor: "#E9D3AE" }}
-        >
-          <FaPencilAlt className="mt-3" style={{ color: "#E9D3AE" }} />
-          <textarea
-            name="wishes"
-            className="p-2 w-full bg-transparent outline-none"
-            placeholder="Type your wishes"
-            rows={3}
-            required
-            style={{ resize: "none" }}
-          />
-        </div>
-        <button
-          className="flex justify-center text-sm text-white mt-12 px-6 py-2 rounded-full cursor-pointer relative"
-          style={{
-            background: loading ? "" : "#50657F",
-            color: loading ? "#50657F" : "",
-            border: loading ? "1px #50657F solid" : "",
-            fontWeight: loading ? "normal" : "light",
-          }}
-          type="submit"
-          disabled={loading}
-        >
-          {loading ? "Loading" : "Send"}
-          {loading && (
-            <span className="absolute right-0 top-0 flex h-3 w-3">
-              <span
-                className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75"
-                style={{ backgroundColor: "#50657F" }}
-              />
-              <span
-                className="relative inline-flex rounded-full h-3 w-3"
-                style={{ backgroundColor: "#50657F" }}
-              />
-            </span>
-          )}
-        </button>
-      </form>
-      <article
-        className="flex flex-col items-center overflow-y-scroll space-y-4 w-3/4"
+          <div
+            className="flex justify-center px-2 space-x-2 border-b"
+            style={{ borderColor: "#E9D3AE" }}
+          >
+            <FaPencilAlt className="mt-3" style={{ color: "#E9D3AE" }} />
+            <textarea
+              name="wishes"
+              className="p-2 w-full bg-transparent outline-none"
+              placeholder="Type your wishes"
+              rows={3}
+              required
+              style={{ resize: "none" }}
+            />
+          </div>
+          <button
+            className="flex justify-center text-sm text-white mx-auto mt-6 mb-6 px-6 py-2 rounded-full cursor-pointer relative"
+            style={{
+              background: loading ? "" : "#50657F",
+              color: loading ? "#50657F" : "",
+              border: loading ? "1px #50657F solid" : "",
+              fontWeight: loading ? "normal" : "light",
+            }}
+            type="submit"
+            disabled={loading}
+          >
+            {loading ? "Loading" : "Send"}
+            {loading && (
+              <span className="absolute right-0 top-0 flex h-3 w-3">
+                <span
+                  className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75"
+                  style={{ backgroundColor: "#50657F" }}
+                />
+                <span
+                  className="relative inline-flex rounded-full h-3 w-3"
+                  style={{ backgroundColor: "#50657F" }}
+                />
+              </span>
+            )}
+          </button>
+        </form>
+      </TransitionWrapper>
+      {/* </form> */}
+      <TransitionWrapper
+        id="wedding_wishes_list"
+        className="flex flex-col items-center space-y-4 w-3/4 mx-auto"
         style={{
           maxHeight: 500,
+          overflowY: "scroll",
         }}
       >
         {data?.map((d: any, i) => {
@@ -152,7 +158,7 @@ export default function WeddingWishes({
             </div>
           );
         })}
-      </article>
+      </TransitionWrapper>
     </>
   );
 }

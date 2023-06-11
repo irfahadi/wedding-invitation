@@ -113,7 +113,14 @@ export default function HomeContent({
             © 2023 Kristianto & Stephanie <b>#STEPcloserwithKRIS</b>
           </div>
           <div className="text-center text-sm">
-            Photo and Video by <b>@elysian.picture</b>
+            Photo and Video by{" "}
+            <a
+              className="font-normal underline"
+              href="https://www.instagram.com/elysian.picture/"
+              target="_blank"
+            >
+              @elysian.picture
+            </a>
           </div>
           <div className="text-center text-sm">
             Invitation by <b>Kristianto & Stephanie</b>

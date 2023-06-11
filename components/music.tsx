@@ -1,13 +1,13 @@
-import useLocalStorage from "@/hooks/useLocalStorage";
 import { useEffect, useState } from "react";
 import { FaPause, FaPlay } from "react-icons/fa";
+import { useCookieState } from "use-cookie-state";
 
 export default function Music() {
-  const [playing, setPlaying] = useLocalStorage("autoPlay", true);
+  const [playing, setPlaying] = useCookieState<string>("autoPlay", "t");
   const [firstTimeInteract, setFirstTimeInteract] = useState(false);
 
   const toggleAudio = () => {
-    setPlaying(!playing);
+    setPlaying(playing === "t" ? "f" : "t");
   };
 
   useEffect(() => {
@@ -31,9 +31,9 @@ export default function Music() {
         "audio-element"
       )[0] as HTMLAudioElement;
 
-      if (playing && audioEl.paused) {
+      if (playing === "t" && audioEl.paused) {
         audioEl.play();
-      } else if (!playing && !audioEl.paused) {
+      } else if (playing === "f" && !audioEl.paused) {
         audioEl.pause();
       }
     };
@@ -51,7 +51,7 @@ export default function Music() {
           style={{ color: "#262262", background: "white" }}
           onClick={toggleAudio}
         >
-          {playing ? <FaPause /> : <FaPlay />}
+          {playing === "f" ? <FaPlay /> : <FaPause />}
         </button>
       </div>
       <audio className="audio-element" autoPlay loop>
