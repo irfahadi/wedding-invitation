@@ -25,22 +25,6 @@ export default function EpicJourney({
         <tbody>
           <tr>
             <td rowSpan={2} className="text-right">
-              <Image
-                className="absolute left-0 top-1/3 -z-10"
-                src="homeContent/daun_mirror.svg"
-                alt="Gold Line"
-                width={120}
-                height={105}
-                priority
-              />
-              <Image
-                className="absolute right-0 -bottom-8"
-                src="homeContent/daun.svg"
-                alt="Gold Line"
-                width={102}
-                height={85}
-                priority
-              />
               2011
             </td>
             <td rowSpan={9} className="relative">
