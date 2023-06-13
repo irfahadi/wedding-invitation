@@ -110,7 +110,7 @@ export default function HomeContent({
 
         <article className="flex flex-col items-center space-y-0 w-full pt-8">
           <div className="text-center text-sm">
-            © 2023 Kristianto & Stephanie <b>#STEPcloserwithKRIS</b>
+            © 2023 Kristianto & Stephanie All Rights Reserved
           </div>
           <div className="text-center text-sm">
             Photo and Video by{" "}
@@ -123,7 +123,7 @@ export default function HomeContent({
             </a>
           </div>
           <div className="text-center text-sm">
-            Invitation by <b>Kristianto & Stephanie</b>
+            Invitation design & apps by <b>Kristianto & Stephanie</b>
           </div>
           <div className="text-center text-sm space-x-1">
             <span>Song</span>
