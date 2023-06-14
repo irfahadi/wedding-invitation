@@ -3,7 +3,10 @@ import { FaPause, FaPlay } from "react-icons/fa";
 import { useCookieState } from "use-cookie-state";
 
 export default function Music() {
-  const [playing, setPlaying] = useCookieState<string>("autoPlay", "t");
+  const [playing, setPlaying] = useCookieState<string>("autoPlay", "t", {
+    // 1 hours
+    encode: { path: "/", maxAge: 60 * 60 },
+  });
   const [firstTimeInteract, setFirstTimeInteract] = useState(false);
 
   const toggleAudio = () => {

@@ -11,7 +11,11 @@ import { useCookieState } from "use-cookie-state";
 export default function IndexPage() {
   const [params, setParams] = useCookieState<string | undefined>(
     "params",
-    undefined
+    undefined,
+    {
+      // 28 days
+      encode: { path: "/", maxAge: 60 * 60 * 24 * 28 },
+    }
   );
   const [loading, setLoading] = useState(true);
   const [searchParams, setSearchParams] = useState<
@@ -19,7 +23,11 @@ export default function IndexPage() {
   >(useSearchParams());
   const [invitationIsOpen, setInvitationIsOpen] = useCookieState<boolean>(
     "invitationIsOpen",
-    false
+    false,
+    {
+      // 1 hours
+      encode: { path: "/", maxAge: 60 * 60 },
+    }
   );
 
   const openInvitation = () => {
@@ -50,9 +58,8 @@ export default function IndexPage() {
         }`}
         to={searchParams.get("to")}
         gender={searchParams.get("g")}
-        married={searchParams.get("m") === "t"}
-        hasPartner={searchParams.get("p") === "t"}
-        partnerName={searchParams.get("pm")}
+        married={searchParams.get("m") === "1"}
+        hasPartner={searchParams.get("p") === "1"}
         openInvitation={openInvitation}
       />
       <Music />

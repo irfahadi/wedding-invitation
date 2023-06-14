@@ -4,7 +4,6 @@ import { CSSProperties, MouseEventHandler } from "react";
 export default function InvitationCard({
   className,
   hasPartner,
-  partnerName,
   to,
   gender,
   married,
@@ -13,7 +12,6 @@ export default function InvitationCard({
 }: {
   className?: string;
   hasPartner?: boolean;
-  partnerName?: string | null;
   to?: string | null;
   gender?: string | null;
   married?: boolean;
@@ -21,22 +19,25 @@ export default function InvitationCard({
   style?: CSSProperties;
 }) {
   const displayName = () => {
-    let target;
+    let target = to?.split("&")[0];
+    let partnerName = to?.split("&")[1];
 
-    if (gender === "f") {
-      target = `${married ? "Mrs." : "Ms."} ${to || "Lorem Ipsum"}`;
+    if (!to) return "";
+
+    if (gender?.toLocaleLowerCase() === "f") {
+      target = `${married ? "Mrs." : "Ms."} ${target || "Lorem Ipsum"}`;
     } else {
-      target = `Mr. ${to || "Lorem Ipsum"}`;
+      target = `Mr. ${target || "Lorem Ipsum"}`;
     }
 
-    if (!hasPartner) return target;
+    if (!hasPartner && !partnerName) return target;
     if (!partnerName) return `${target} & Partner`;
 
-    if (gender === "f") {
+    if (gender?.toLocaleLowerCase() === "f") {
       return `Mr. ${partnerName} & ${target}`;
     }
 
-    return `${target} & ${married ? "Mrs." : "Ms."} ${to}`;
+    return `${target} & ${married ? "Mrs." : "Ms."} ${partnerName}`;
   };
 
   return (
@@ -69,7 +70,7 @@ export default function InvitationCard({
           To our dearest,
         </p>
         <p
-          className="flex w-full justify-center items-center text-lg mt-2"
+          className="flex w-full justify-center items-center mt-2 font-normal"
           style={{ height: 90 }}
         >
           <Image
