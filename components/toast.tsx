@@ -1,8 +1,5 @@
 import { Transition } from "@headlessui/react";
-import { Cormorant } from "next/font/google";
 import { ToastIcon, Toaster, resolveValue } from "react-hot-toast";
-
-const cormorant = Cormorant({ weight: "600", subsets: ["latin"] });
 
 export default function Toast() {
   return (

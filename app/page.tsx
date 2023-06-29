@@ -9,24 +9,33 @@ import Music from "@/components/music";
 import { useCookieState } from "use-cookie-state";
 
 export default function IndexPage() {
+  const paramExpireDate = new Date();
+  paramExpireDate.setDate(paramExpireDate.getDate() + 10);
   const [params, setParams] = useCookieState<string | undefined>(
     "params",
     undefined,
     {
-      // 28 days
-      encode: { path: "/", maxAge: 60 * 60 * 24 * 28 },
+      encode: { path: "/", expires: paramExpireDate, sameSite: true },
     }
   );
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [searchParams, setSearchParams] = useState<
     ReadonlyURLSearchParams | URLSearchParams
   >(useSearchParams());
+
+  const invitationExpireDate = new Date();
+  invitationExpireDate.setHours(invitationExpireDate.getHours() + 1);
   const [invitationIsOpen, setInvitationIsOpen] = useCookieState<boolean>(
     "invitationIsOpen",
     false,
     {
       // 1 hours
-      encode: { path: "/", maxAge: 60 * 60 },
+      encode: {
+        path: "/",
+        expires: invitationExpireDate,
+        sameSite: true,
+        secure: true,
+      },
     }
   );
 

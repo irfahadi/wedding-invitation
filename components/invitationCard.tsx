@@ -19,21 +19,25 @@ export default function InvitationCard({
   style?: CSSProperties;
 }) {
   const displayName = () => {
+    if (!to) return "";
+
+    if (gender?.toLowerCase() === "c") {
+      return to;
+    }
+
     let target = to?.split("&")[0];
     let partnerName = to?.split("&")[1];
 
-    if (!to) return "";
-
-    if (gender?.toLocaleLowerCase() === "f") {
-      target = `${married ? "Mrs." : "Ms."} ${target || "Lorem Ipsum"}`;
+    if (gender?.toLowerCase() === "f") {
+      target = `${married ? "Mrs." : "Ms."} ${target}`;
     } else {
-      target = `Mr. ${target || "Lorem Ipsum"}`;
+      target = `Mr. ${target}`;
     }
 
     if (!hasPartner && !partnerName) return target;
     if (!partnerName) return `${target} & Partner`;
 
-    if (gender?.toLocaleLowerCase() === "f") {
+    if (gender?.toLowerCase() === "f") {
       return `Mr. ${partnerName} & ${target}`;
     }
 

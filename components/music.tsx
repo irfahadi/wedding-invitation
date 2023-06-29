@@ -3,9 +3,16 @@ import { FaPause, FaPlay } from "react-icons/fa";
 import { useCookieState } from "use-cookie-state";
 
 export default function Music() {
+  const autoPlayExpireDate = new Date();
+  autoPlayExpireDate.setHours(autoPlayExpireDate.getHours() + 1);
   const [playing, setPlaying] = useCookieState<string>("autoPlay", "t", {
     // 1 hours
-    encode: { path: "/", maxAge: 60 * 60 },
+    encode: {
+      path: "/",
+      expires: autoPlayExpireDate,
+      sameSite: true,
+      secure: true,
+    },
   });
   const [firstTimeInteract, setFirstTimeInteract] = useState(false);
 
