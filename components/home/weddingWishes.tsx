@@ -20,7 +20,7 @@ export default function WeddingWishes({
   children?: React.ReactNode;
 }) {
   const [params] = useCookieState("params", undefined);
-  const [name, setName] = useState<string>();
+  const [name, setName] = useState<string>("");
   const [loading, setLoading] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
   const [data, setData] = useState<any[]>();
@@ -42,7 +42,9 @@ export default function WeddingWishes({
 
   useEffect(() => {
     const urlParams = new URLSearchParams(params);
-    setName(urlParams.get("to") || "");
+    if (urlParams.get("g") !== "c") {
+      setName(urlParams.get("to") || "");
+    }
   }, [params]);
 
   const onFormSubmit = (e: FormEvent) => {
