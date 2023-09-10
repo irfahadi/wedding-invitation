@@ -1,15 +1,10 @@
+import { Title } from "@/components/Title";
 import { Transition } from "@/components/Transition";
 import { VStackTransition } from "@/components/VStackTransition";
 import { STORAGE_URL } from "@/contants";
-import { useLightbox } from "@/hooks/useLightbox";
-import {
-  Divider,
-  Grid,
-  GridItem,
-  Image,
-  StackProps,
-  Text,
-} from "@chakra-ui/react";
+import useLightbox from "@/hooks/useLightbox";
+import { Divider, Grid, GridItem, Image, StackProps } from "@chakra-ui/react";
+import { Suspense } from "react";
 
 const images = [
   {
@@ -62,58 +57,54 @@ const HappinessCollection = ({ ...stackProps }: StackProps) => {
   const { openLightbox, renderLightbox } = useLightbox();
 
   return (
-    <VStackTransition gap={10} zIndex={1} {...stackProps}>
-      <Text
-        as="h1"
-        fontSize={"3xl"}
-        casing={"uppercase"}
-        textAlign={"center"}
-        letterSpacing={2}
-        whiteSpace={"pre-line"}
-      >
-        {`Our Happiness
+    <Suspense>
+      <VStackTransition gap={10} zIndex={1} {...stackProps}>
+        <Title>
+          {`Our Happiness
         Collection`}
-      </Text>
-      <Grid
-        templateRows="repeat(6, auto)"
-        templateColumns="repeat(2, 1fr)"
-        gap={2}
-        px={2}
-      >
-        {images.map(({ picture, colSpan, rowSpan, width, height }, index) => (
-          <GridItem key={index} colSpan={colSpan} rowSpan={rowSpan}>
-            <Transition>
-              <Image
-                src={`${STORAGE_URL}/happinessCollections%2F${picture}`}
-                alt={picture}
-                w={width}
-                h={height}
-                objectFit={"cover"}
-                onClick={() => openLightbox(index)}
-                cursor={"pointer"}
-              />
-            </Transition>
-          </GridItem>
-        ))}
-      </Grid>
-      {renderLightbox({
-        slides: images.map((image) => {
-          const width = image.width * 4;
-          const height = image.height * 4;
-          return {
-            src: `${STORAGE_URL}/happinessCollections%2F${image.picture}`,
-            width,
-            height,
-          };
-        }),
-      })}
-      <Divider
-        w={60}
-        borderColor={"#B98B3C"}
-        borderWidth={1}
-        marginX={"auto"}
-      />
-    </VStackTransition>
+        </Title>
+        <Grid
+          templateRows="repeat(6, auto)"
+          templateColumns="repeat(2, 1fr)"
+          gap={2}
+          px={2}
+        >
+          {images.map(({ picture, colSpan, rowSpan, width, height }, index) => (
+            <GridItem key={index} colSpan={colSpan} rowSpan={rowSpan}>
+              <Transition>
+                <Image
+                  src={`${STORAGE_URL}/happinessCollections%2F${picture}`}
+                  alt={picture}
+                  w={width}
+                  h={height}
+                  objectFit={"cover"}
+                  onClick={() => openLightbox(index)}
+                  cursor={"pointer"}
+                  placeholder="blur"
+                />
+              </Transition>
+            </GridItem>
+          ))}
+        </Grid>
+        {renderLightbox({
+          slides: images.map((image) => {
+            const width = image.width * 4;
+            const height = image.height * 4;
+            return {
+              src: `${STORAGE_URL}/happinessCollections%2F${image.picture}`,
+              width,
+              height,
+            };
+          }),
+        })}
+        <Divider
+          w={60}
+          borderColor={"#B98B3C"}
+          borderWidth={1}
+          marginX={"auto"}
+        />
+      </VStackTransition>
+    </Suspense>
   );
 };
 

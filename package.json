@@ -1,7 +1,10 @@
 {
   "name": "wedding-invitation",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "description": "A digital wedding invitation for kristianto and stephanie using nextjs and chakra-ui",
+  "author": "Kristianto",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -17,6 +20,7 @@
     "@types/node": "20.5.9",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
+    "@vercel/analytics": "^1.0.2",
     "cookies-next": "^3.0.0",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
@@ -24,6 +28,7 @@
     "next": "13.4.19",
     "papaparse": "^5.4.1",
     "react": "18.2.0",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-countdown": "^2.3.5",
     "react-dom": "18.2.0",
     "react-icons": "^4.11.0",
@@ -31,6 +36,10 @@
     "yet-another-react-lightbox": "^3.12.2"
   },
   "devDependencies": {
-    "@types/papaparse": "^5.3.8"
+    "@types/papaparse": "^5.3.8",
+    "@types/react-copy-to-clipboard": "^5.0.4"
+  },
+  "engines": {
+    "node": ">=16.20.1"
   }
 }

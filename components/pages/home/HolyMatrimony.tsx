@@ -1,30 +1,12 @@
-import { Countdown } from "@/components/Countdown";
+import { Title } from "@/components/Title";
 import { VStackTransition } from "@/components/VStackTransition";
-import { STORAGE_URL } from "@/contants";
-import {
-  Box,
-  Button,
-  Image,
-  LinkOverlay,
-  StackProps,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, StackProps, Text, VStack } from "@chakra-ui/react";
 
 const HolyMatrimony = ({ ...stackProps }: StackProps) => {
   return (
     <VStackTransition gap={10} zIndex={1} {...stackProps}>
       <VStackTransition gap={4}>
-        <Text
-          as="h1"
-          fontSize={"3xl"}
-          casing={"uppercase"}
-          textAlign={"center"}
-          letterSpacing={2}
-          whiteSpace={"pre-line"}
-        >
-          Holy Matrimony
-        </Text>
+        <Title>Holy Matrimony</Title>
         <Text
           as="h3"
           fontSize={"xl"}

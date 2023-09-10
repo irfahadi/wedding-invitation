@@ -9,12 +9,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import {
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
-  FaLinkedinIn,
-} from "react-icons/fa6";
+import { FaInstagram, FaLinkedinIn } from "react-icons/fa6";
 
 type ProfileImageProps = {
   name?: string;

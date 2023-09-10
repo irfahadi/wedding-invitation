@@ -1,4 +1,4 @@
-import { ScaleFade, StackProps, VStack } from "@chakra-ui/react";
+import { StackProps, VStack } from "@chakra-ui/react";
 import { Children } from "react";
 import { Transition } from "./Transition";
 

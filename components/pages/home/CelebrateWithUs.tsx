@@ -1,4 +1,5 @@
 import { Countdown } from "@/components/Countdown";
+import { Title } from "@/components/Title";
 import { VStackTransition } from "@/components/VStackTransition";
 import { STORAGE_URL } from "@/contants";
 import {
@@ -14,17 +15,10 @@ const CelebrateWithUs = ({ ...stackProps }: StackProps) => {
   return (
     <VStackTransition gap={10} zIndex={1} {...stackProps}>
       <VStackTransition gap={4}>
-        <Text
-          as="h1"
-          fontSize={"3xl"}
-          casing={"uppercase"}
-          textAlign={"center"}
-          letterSpacing={2}
-          whiteSpace={"pre-line"}
-        >
+        <Title>
           {`Save the date &
         Celebrate with us`}
-        </Text>
+        </Title>
         <Text
           as="h3"
           fontSize={"xl"}

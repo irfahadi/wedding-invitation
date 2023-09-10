@@ -1,5 +1,5 @@
 import { Box, Button, Image, Modal, Text } from "@chakra-ui/react";
-import { InvitationModalContent } from "./InvitationModalContent";
+import { CommonModalContent } from "./CommonModalContent";
 
 type InvitationModalProps = {
   isOpen: boolean;
@@ -10,7 +10,7 @@ type InvitationModalProps = {
 const InvitationModal = ({ isOpen, onClose, name }: InvitationModalProps) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose} size={"full"}>
-      <InvitationModalContent
+      <CommonModalContent
         justifyContent={"center"}
         alignItems={"center"}
         gap={2}
@@ -40,11 +40,14 @@ const InvitationModal = ({ isOpen, onClose, name }: InvitationModalProps) => {
           />
           <Text>{name}</Text>
         </Box>
-        <Text>You are invited to our Wedding Ceremony</Text>
-        <Button mt={8} onClick={onClose}>
+        <Text mt={4} textAlign={"center"} whiteSpace={"pre-line"}>
+          {`You are invited to our 
+          Wedding Ceremony`}
+        </Text>
+        <Button mt={6} onClick={onClose}>
           Open Invitation
         </Button>
-      </InvitationModalContent>
+      </CommonModalContent>
     </Modal>
   );
 };

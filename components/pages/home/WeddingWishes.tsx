@@ -11,6 +11,7 @@ import {
   VStack,
   useToast,
 } from "@chakra-ui/react";
+import { Title } from "@/components/Title";
 
 type WeddingWishesProps = {
   displayName?: string;
@@ -58,6 +59,7 @@ const WeddingWishes = ({ displayName, ...stackProps }: WeddingWishesProps) => {
           description: "Thank You for your wishes!",
           status: "success",
           isClosable: true,
+          duration: 2500,
         });
 
         const result: any = {};
@@ -81,16 +83,7 @@ const WeddingWishes = ({ displayName, ...stackProps }: WeddingWishesProps) => {
 
   return (
     <VStackTransition gap={10} zIndex={1} {...stackProps}>
-      <Text
-        as="h1"
-        fontSize={"3xl"}
-        casing={"uppercase"}
-        textAlign={"center"}
-        letterSpacing={2}
-        whiteSpace={"pre-line"}
-      >
-        {`Wedding Wishes`}
-      </Text>
+      <Title>{`Wedding Wishes`}</Title>
       <Text textAlign={"center"} whiteSpace={"pre-line"}>
         {`Your wishes are our blessing to start a
         new awesome journey ahead!`}
@@ -109,15 +102,16 @@ const WeddingWishes = ({ displayName, ...stackProps }: WeddingWishesProps) => {
           w="96"
           type="text"
           value={name}
-          defaultValue={displayName}
           onChange={(e) => setName(e.target.value)}
           required
+          autoComplete={"on"}
         />
         <Textarea
           name="wishes"
           placeholder="Type your wishes"
           w="96"
           required
+          autoComplete={"off"}
         />
         <Select
           name="attending"
@@ -152,7 +146,7 @@ const WeddingWishes = ({ displayName, ...stackProps }: WeddingWishesProps) => {
           </Select>
         )}
         <Button type="submit" isLoading={loading} mt="8">
-          Send
+          {loading ? "Sending..." : "Send"}
         </Button>
       </VStack>
       <VStack w={96} h={96} overflowY={"scroll"} gap={4}>

@@ -1,14 +1,16 @@
 import { Image, ModalContent, StackProps, VStack } from "@chakra-ui/react";
 import { BottomOrnament, TopOrnament } from "../Ornaments";
 
-type InvitationModalContentProps = {
+type CommonModalContentProps = {
   children?: React.ReactNode;
+  backButton?: React.ReactElement;
 } & StackProps;
 
-const InvitationModalContent = ({
+const CommonModalContent = ({
   children,
+  backButton,
   ...props
-}: InvitationModalContentProps) => {
+}: CommonModalContentProps) => {
   return (
     <ModalContent
       h="100vh"
@@ -26,6 +28,7 @@ const InvitationModalContent = ({
       >
         <TopOrnament />
         <BottomOrnament />
+        {backButton}
         <VStack position={"relative"} zIndex={1} h="full" {...props}>
           {children}
         </VStack>
@@ -34,4 +37,4 @@ const InvitationModalContent = ({
   );
 };
 
-export { InvitationModalContent };
+export { CommonModalContent };

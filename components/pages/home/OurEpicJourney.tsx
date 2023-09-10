@@ -1,3 +1,4 @@
+import { Title } from "@/components/Title";
 import { VStackTransition } from "@/components/VStackTransition";
 import {
   Box,
@@ -8,25 +9,13 @@ import {
   Tbody,
   Td,
   Text,
-  Tfoot,
-  Th,
-  Thead,
   Tr,
 } from "@chakra-ui/react";
 
 const OurEpicJourney = ({ ...stackProps }: StackProps) => {
   return (
     <VStackTransition gap={10} zIndex={1} {...stackProps}>
-      <Text
-        as="h1"
-        fontSize={"3xl"}
-        casing={"uppercase"}
-        textAlign={"center"}
-        letterSpacing={2}
-        whiteSpace={"pre-line"}
-      >
-        {`Our Epic Journey`}
-      </Text>
+      <Title>{`Our Epic Journey`}</Title>
       <Box
         as="iframe"
         boxSize={"lg"}
