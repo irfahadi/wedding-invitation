@@ -1,10 +1,8 @@
 import * as React from "react";
-import dynamic from "next/dynamic";
 import type { LightboxExternalProps } from "yet-another-react-lightbox";
+import { Lightbox } from "@/components/Lightbox.e";
 
-const Lightbox = dynamic(() => import("@/components/lightbox"));
-
-export default function useLightbox() {
+const useLightbox = () => {
   const [open, setOpen] = React.useState(false);
   const [interactive, setInteractive] = React.useState(false);
   const [index, setIndex] = React.useState(0);
@@ -29,4 +27,6 @@ export default function useLightbox() {
   );
 
   return { openLightbox, renderLightbox };
-}
+};
+
+export { useLightbox };
