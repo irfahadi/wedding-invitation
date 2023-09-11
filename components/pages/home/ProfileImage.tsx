@@ -32,7 +32,7 @@ const ProfileImage = ({
     <VStack gap={4}>
       <Image
         borderRadius="full"
-        boxSize="200px"
+        boxSize={["176px", "200px"]}
         objectFit={"cover"}
         {...imageProps}
         src={`${STORAGE_URL}/${src}`}

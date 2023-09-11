@@ -5,8 +5,8 @@ const Countdown = () => {
   const box = (value: number) => {
     return (
       <Flex
-        w={12}
-        h={12}
+        w={[10, 12]}
+        h={[10, 12]}
         alignItems={"center"}
         justifyContent={"center"}
         borderColor={"#50657F"}
@@ -20,7 +20,7 @@ const Countdown = () => {
 
   const renderer = ({ days, hours, minutes }: CountdownTimeDelta) => {
     return (
-      <HStack gap={6}>
+      <HStack gap={6} justifyContent={"center"} alignItems={"center"}>
         <VStack gap={2} justifyContent={"center"}>
           <HStack gap={4}>
             {box(Math.floor(days / 10))}

@@ -4,16 +4,22 @@ import { Image, StackProps, Text } from "@chakra-ui/react";
 
 const Header = ({ ...stackProps }: StackProps) => {
   return (
-    <VStackTransition gap={10} zIndex={1} {...stackProps}>
+    <VStackTransition gap={[6, 10]} zIndex={1} {...stackProps}>
       <Image
         src="/monogram.svg"
         alt="Kristianto & Stephanie Monogram"
-        width={192}
-        height={192}
+        width={[128, 192]}
+        height={[128, 192]}
+        marginX="auto"
       />
-      <Text align={"center"} fontSize={"sm"} whiteSpace={"pre-line"}>
-        {`“Love never gives up, never loses faith, is always hopeful
-          and endures through every circumstance.”
+      <Text
+        textAlign={"center"}
+        w="sm"
+        fontSize={"sm"}
+        px={2}
+        whiteSpace={"pre-line"}
+      >
+        {`“Love never gives up, never loses faith, is always hopeful and endures through every circumstance.”
           - Corinthians 13:7 -`}
       </Text>
       <ProfileImage

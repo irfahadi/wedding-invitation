@@ -82,11 +82,10 @@ const WeddingWishes = ({ displayName, ...stackProps }: WeddingWishesProps) => {
   };
 
   return (
-    <VStackTransition gap={10} zIndex={1} {...stackProps}>
+    <VStackTransition gap={[6, 10]} zIndex={1} {...stackProps}>
       <Title>{`Wedding Wishes`}</Title>
-      <Text textAlign={"center"} whiteSpace={"pre-line"}>
-        {`Your wishes are our blessing to start a
-        new awesome journey ahead!`}
+      <Text textAlign={"center"} w="sm" px={2}>
+        Your wishes are our blessing to start a new awesome journey ahead!
       </Text>
       <VStack
         as="form"
@@ -99,7 +98,7 @@ const WeddingWishes = ({ displayName, ...stackProps }: WeddingWishesProps) => {
         <Input
           name="name"
           placeholder="Name"
-          w="96"
+          w={[80, 96]}
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -109,12 +108,13 @@ const WeddingWishes = ({ displayName, ...stackProps }: WeddingWishesProps) => {
         <Textarea
           name="wishes"
           placeholder="Type your wishes"
-          w="96"
+          w={[80, 96]}
           required
           autoComplete={"off"}
         />
         <Select
           name="attending"
+          w={[80, 96]}
           required
           value={attend}
           onChange={(e) => {
@@ -149,7 +149,7 @@ const WeddingWishes = ({ displayName, ...stackProps }: WeddingWishesProps) => {
           {loading ? "Sending..." : "Send"}
         </Button>
       </VStack>
-      <VStack w={96} h={96} overflowY={"scroll"} gap={4}>
+      <VStack w={[80, 96]} h={[80, 96]} overflowY={"scroll"} gap={4}>
         {data?.map((d: any, i) => (
           <VStack key={i} gap={1} w="full">
             <Text w="full" fontWeight={700} fontSize={"sm"}>

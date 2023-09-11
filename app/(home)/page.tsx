@@ -57,13 +57,11 @@ const HomePage = () => {
   }, [name, isRecentlyOpen, onOpen]);
 
   useEffect(() => {
-    if (isOpen) {
-      setCookie("is-recently-open", "1", cookieOptions);
-    }
+    if (isOpen) setCookie("is-recently-open", "1", cookieOptions);
   }, [isOpen, cookieOptions]);
 
   return (
-    <VStack minH="100vh" justifyContent={"center"} gap={0}>
+    <VStack minH="100vh" justifyContent={"center"} gap={0} overflowX={"hidden"}>
       <InvitationModal isOpen={isOpen} onClose={onClose} name={name} />
       <HomeContent name={name} />
     </VStack>

@@ -58,7 +58,7 @@ const HappinessCollection = ({ ...stackProps }: StackProps) => {
 
   return (
     <Suspense>
-      <VStackTransition gap={10} zIndex={1} {...stackProps}>
+      <VStackTransition gap={[6, 10]} zIndex={1} {...stackProps}>
         <Title>
           {`Our Happiness
         Collection`}

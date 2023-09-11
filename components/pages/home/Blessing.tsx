@@ -18,14 +18,15 @@ const Blessing = ({ ...stackProps }: StackProps) => {
       <Portal>
         <BlessingModal isOpen={isOpen} onClose={onClose} />
       </Portal>
-      <VStackTransition gap={10} zIndex={1} {...stackProps}>
+      <VStackTransition gap={[6, 10]} zIndex={1} {...stackProps}>
         <Title>
           {`We Appreciate
           Your Blessing`}
         </Title>
-        <Text textAlign={"center"} whiteSpace={"pre-line"}>
-          {`Your kind blessing can be sent to this information below. 
-          Also please fill your address information so that we can send you a gratitude gift.`}
+        <Text textAlign={"center"} w="sm" px={2}>
+          Your kind blessing can be sent to this information below. Also please
+          fill your address information so that we can send you a gratitude
+          gift.
         </Text>
         <Button onClick={onOpen}>Bank Transfer</Button>
         <Divider

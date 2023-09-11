@@ -14,7 +14,7 @@ const WeddingReception = ({ ...stackProps }: StackProps) => {
   const STORAGE_URL = process.env.NEXT_PUBLIC_STORAGE_URL;
 
   return (
-    <VStackTransition gap={10} zIndex={1} {...stackProps}>
+    <VStackTransition gap={[6, 10]} zIndex={1} {...stackProps}>
       <Image src="/rose_wedding.svg" alt="Wedding Reception" />
       <Image
         src={`${STORAGE_URL}/wedding_reception.jpg?alt=media&token=74ebc86c-6944-4281-a739-9b8e84471970`}
@@ -32,24 +32,47 @@ const WeddingReception = ({ ...stackProps }: StackProps) => {
       >
         <Button>Map Location</Button>
       </LinkOverlay>
-      <Text textAlign={"center"} whiteSpace={"pre-line"}>
-        {`It’s an outdoor wedding party, so we would recommend 
-        you to wear your comfortable party outfit and shoes.`}
+      <Text textAlign={"center"} w="sm" px={2}>
+        {`It’s an outdoor wedding party, so we would recommend you to wear your comfortable party outfit and shoes.`}
       </Text>
-      <HStack gap={16}>
+      <HStack gap={[12, 16]}>
         <VStack gap={2}>
-          <Image src="/no_stilleto.svg" alt="No Stilleto" width={"14"} />
-          <Text textAlign={"center"} whiteSpace={"pre-line"}>{`No
+          <Image
+            src="/no_stilleto.svg"
+            alt="No Stilleto"
+            width={["12", "14"]}
+          />
+          <Text
+            fontSize={["sm", "md"]}
+            textAlign={"center"}
+            whiteSpace={"pre-line"}
+          >{`No
           Stilleto`}</Text>
         </VStack>
         <VStack gap={2}>
-          <Image src="/outfit.svg" alt="Comfortable Outfits" width={"14"} />
-          <Text textAlign={"center"} whiteSpace={"pre-line"}>{`Comfortable Party
+          <Image
+            src="/outfit.svg"
+            alt="Comfortable Outfits"
+            width={["12", "14"]}
+          />
+          <Text
+            fontSize={["sm", "md"]}
+            textAlign={"center"}
+            whiteSpace={"pre-line"}
+          >{`Comfortable Party
           Outfits`}</Text>
         </VStack>
         <VStack gap={2}>
-          <Image src="/2_person.svg" alt="Valid for 2 Person" width={"14"} />
-          <Text textAlign={"center"} whiteSpace={"pre-line"}>{`Valid for 
+          <Image
+            src="/2_person.svg"
+            alt="Valid for 2 Person"
+            width={["12", "14"]}
+          />
+          <Text
+            fontSize={["sm", "md"]}
+            textAlign={"center"}
+            whiteSpace={"pre-line"}
+          >{`Valid for 
           2 Person`}</Text>
         </VStack>
       </HStack>

@@ -3,20 +3,10 @@ import { Box, Link, StackProps, Text, VStack } from "@chakra-ui/react";
 const Footer = ({ ...stackProps }: StackProps) => {
   return (
     <VStack position={"relative"} gap={1} zIndex={1} {...stackProps}>
-      <Text
-        textAlign={"center"}
-        whiteSpace={"pre-line"}
-        fontWeight={"light"}
-        fontSize={"sm"}
-      >
+      <Text textAlign={"center"} fontWeight={"light"} fontSize={"sm"}>
         {`© 2023 Kristianto & Stephanie All Rights Reserved`}
       </Text>
-      <Text
-        textAlign={"center"}
-        whiteSpace={"pre-line"}
-        fontWeight={"light"}
-        fontSize={"sm"}
-      >
+      <Text textAlign={"center"} fontWeight={"light"} fontSize={"sm"}>
         {`Photo and video by `}
         <Link
           fontWeight={700}
@@ -27,12 +17,7 @@ const Footer = ({ ...stackProps }: StackProps) => {
           @elysian.picture
         </Link>
       </Text>
-      <Text
-        textAlign={"center"}
-        whiteSpace={"pre-line"}
-        fontWeight={"light"}
-        fontSize={"sm"}
-      >
+      <Text textAlign={"center"} fontWeight={"light"} fontSize={"sm"}>
         {`Invitation design & apps by `}
         <Link
           fontWeight={700}
@@ -43,12 +28,7 @@ const Footer = ({ ...stackProps }: StackProps) => {
           Kristianto & Stephanie
         </Link>
       </Text>
-      <Text
-        textAlign={"center"}
-        whiteSpace={"pre-line"}
-        fontWeight={"light"}
-        fontSize={"sm"}
-      >
+      <Text textAlign={"center"} fontWeight={"light"} fontSize={"sm"}>
         {`Song `}
         <Box as="span" fontWeight={400}>{`Can't Help Falling in Love `}</Box>
         {`by `}

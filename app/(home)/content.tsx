@@ -15,14 +15,15 @@ import { VStack } from "@chakra-ui/react";
 const HomeContent = ({ name }: { name?: string }) => {
   return (
     <VStack
-      boxSize={"lg"}
-      h="full"
-      bg="white"
+      maxW={"lg"}
+      w={"full"}
+      h={"full"}
+      bg={"white"}
       shadow={"lg"}
       position={"relative"}
-      pt={28}
-      pb={32}
-      gap={10}
+      pt={[20, 28]}
+      pb={[24, 32]}
+      gap={[6, 10]}
     >
       <TopOrnament />
       <BottomOrnament />

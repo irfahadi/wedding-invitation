@@ -19,7 +19,8 @@ const CommonModalContent = ({
       bg="blackAlpha.100"
     >
       <VStack
-        boxSize={"lg"}
+        maxW={"lg"}
+        w={"full"}
         h="full"
         position={"relative"}
         bg="white"

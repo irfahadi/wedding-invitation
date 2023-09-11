@@ -11,7 +11,7 @@ const Title = ({
     <Text
       as="h1"
       fontFamily={cormorant.style.fontFamily}
-      fontSize={"3xl"}
+      fontSize={["2xl", "3xl"]}
       casing={"uppercase"}
       textAlign={"center"}
       letterSpacing={2}
