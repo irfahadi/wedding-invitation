@@ -1,21 +1,44 @@
-import "./globals.css";
+import type { Metadata } from "next";
 import { Lato } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
+import { RootProvider } from "./provider";
 
 const lato = Lato({ weight: ["300", "400", "700"], subsets: ["latin"] });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Kristianto & Stephanie",
   description: "Kristianto & Stephanie Wedding Invitation",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
+  const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID;
+
   return (
     <html lang="en">
-      <body className={lato.className}>{children}</body>
+      <body className={lato.className}>
+        <RootProvider>{children}</RootProvider>
+        <Analytics />
+        {/* Google tag (gtag.js) */}
+        {GA_TRACKING_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+            />
+            <Script id="google-analytics">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+      
+                gtag('config', '${GA_TRACKING_ID}');
+              `}
+            </Script>
+          </>
+        )}
+      </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
