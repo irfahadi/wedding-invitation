@@ -1,4 +1,3 @@
-import { STORAGE_URL } from "@/contants";
 import {
   HStack,
   Icon,
@@ -27,6 +26,8 @@ const ProfileImage = ({
   alt,
   ...imageProps
 }: ProfileImageProps) => {
+  const STORAGE_URL = process.env.NEXT_PUBLIC_STORAGE_URL;
+
   return (
     <VStack gap={4}>
       <Image

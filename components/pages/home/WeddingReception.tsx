@@ -1,5 +1,4 @@
 import { VStackTransition } from "@/components/VStackTransition";
-import { STORAGE_URL } from "@/contants";
 import {
   Button,
   Divider,
@@ -12,6 +11,8 @@ import {
 } from "@chakra-ui/react";
 
 const WeddingReception = ({ ...stackProps }: StackProps) => {
+  const STORAGE_URL = process.env.NEXT_PUBLIC_STORAGE_URL;
+
   return (
     <VStackTransition gap={10} zIndex={1} {...stackProps}>
       <Image src="/rose_wedding.svg" alt="Wedding Reception" />

@@ -1,7 +1,6 @@
 import { Countdown } from "@/components/Countdown";
 import { Title } from "@/components/Title";
 import { VStackTransition } from "@/components/VStackTransition";
-import { STORAGE_URL } from "@/contants";
 import {
   Button,
   Divider,
@@ -12,6 +11,8 @@ import {
 } from "@chakra-ui/react";
 
 const CelebrateWithUs = ({ ...stackProps }: StackProps) => {
+  const STORAGE_URL = process.env.NEXT_PUBLIC_STORAGE_URL;
+
   return (
     <VStackTransition gap={10} zIndex={1} {...stackProps}>
       <VStackTransition gap={4}>

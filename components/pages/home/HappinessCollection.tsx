@@ -1,7 +1,6 @@
 import { Title } from "@/components/Title";
 import { Transition } from "@/components/Transition";
 import { VStackTransition } from "@/components/VStackTransition";
-import { STORAGE_URL } from "@/contants";
 import useLightbox from "@/hooks/useLightbox";
 import { Divider, Grid, GridItem, Image, StackProps } from "@chakra-ui/react";
 import { Suspense } from "react";
@@ -55,6 +54,7 @@ const images = [
 
 const HappinessCollection = ({ ...stackProps }: StackProps) => {
   const { openLightbox, renderLightbox } = useLightbox();
+  const STORAGE_URL = process.env.NEXT_PUBLIC_STORAGE_URL;
 
   return (
     <Suspense>
