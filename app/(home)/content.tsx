@@ -30,11 +30,11 @@ const HomeContent = ({ name }: { name?: string }) => {
 
       <Header />
       <CelebrateWithUs />
-      <HolyMatrimony />
+      {/* <HolyMatrimony /> */}
       <WeddingReception />
       <OurEpicJourney />
       <HappinessCollection />
-      <WeddingWishes displayName={name} />
+      {/* <WeddingWishes displayName={name} /> */}
       <Blessing />
       <Footer />
     </VStack>

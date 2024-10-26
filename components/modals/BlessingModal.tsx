@@ -67,7 +67,7 @@ const BlessingModal = ({ isOpen, onClose }: BlessingModalProps) => {
         backButton={
           <Box
             position={"absolute"}
-            zIndex={1}
+            zIndex={10}
             onClick={onClose}
             left={6}
             top={6}

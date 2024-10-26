@@ -14,12 +14,12 @@ const CelebrateWithUs = ({ ...stackProps }: StackProps) => {
           Celebrate with us`}
         </Title>
         <Text as="h3" fontSize={"xl"} textAlign={"center"}>
-          Saturday, July 8th 2023
+          Sunday, November 17th 2024
         </Text>
-        <Image
+        {/* <Image
           src={`${STORAGE_URL}/celebrate_with_us.jpg?alt=media&token=9613a9e4-ca4c-4906-92c8-0d5e8355c883`}
           alt="Save the date & Celebrate with us"
-        />
+        /> */}
       </VStackTransition>
       <Countdown />
       <Button

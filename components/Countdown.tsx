@@ -47,7 +47,7 @@ const Countdown = () => {
   };
 
   return (
-    <ReactCountdown date={new Date(2023, 6, 8, 18, 0, 0)} renderer={renderer} />
+    <ReactCountdown date={new Date(2024, 10, 17, 8, 0, 0)} renderer={renderer} />
   );
 };
 

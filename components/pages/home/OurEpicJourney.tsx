@@ -16,7 +16,7 @@ const OurEpicJourney = ({ ...stackProps }: StackProps) => {
   return (
     <VStackTransition gap={[6, 10]} zIndex={1} {...stackProps}>
       <Title>{`Our Epic Journey`}</Title>
-      <Box position={"relative"} pt={"56.25%"} w={["md", "lg"]}>
+      {/* <Box position={"relative"} pt={"56.25%"} w={["md", "lg"]}>
         <Box
           as="iframe"
           position={"absolute"}
@@ -30,7 +30,7 @@ const OurEpicJourney = ({ ...stackProps }: StackProps) => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />
-      </Box>
+      </Box> */}
       <TableContainer>
         <Table variant={"unstyled"}>
           <Tbody>

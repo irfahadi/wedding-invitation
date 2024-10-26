@@ -2,12 +2,13 @@ import {
   HStack,
   Icon,
   IconButton,
-  Image,
-  ImageProps,
+  // Image,
+  // ImageProps,
   LinkOverlay,
   Text,
   VStack,
 } from "@chakra-ui/react";
+import Image, { ImageProps } from "next/image";
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa6";
 
 type ProfileImageProps = {
@@ -26,13 +27,15 @@ const ProfileImage = ({
   alt,
   ...imageProps
 }: ProfileImageProps) => {
-  const STORAGE_URL = process.env.NEXT_PUBLIC_STORAGE_URL;
+  const STORAGE_URL = process.env.NEXT_PUBLIC_STORAGE_URL || "";
 
   return (
     <VStack gap={4}>
       <Image
-        borderRadius="full"
-        boxSize={["176px", "200px"]}
+        // borderRadius="full"
+        style={{borderRadius:"50%"}}
+        width={150}
+        height={150}
         objectFit={"cover"}
         {...imageProps}
         src={`${STORAGE_URL}/${src}`}
@@ -41,8 +44,10 @@ const ProfileImage = ({
       <Text as="h2" fontSize={"2xl"} casing={"uppercase"} letterSpacing={2}>
         {name}
       </Text>
-      <Text as="h4">{desc}</Text>
-      <HStack>
+      <Text as="h4"
+          textAlign={"center"}
+          whiteSpace={"pre-line"}>{desc}</Text>
+      {/* <HStack>
         <LinkOverlay
           href={`https://www.linkedin.com/in/${linkedIn}`}
           target="_blank"
@@ -66,7 +71,7 @@ const ProfileImage = ({
             isRound
           />
         </LinkOverlay>
-      </HStack>
+      </HStack> */}
     </VStack>
   );
 };

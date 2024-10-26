@@ -16,15 +16,15 @@ const WeddingReception = ({ ...stackProps }: StackProps) => {
   return (
     <VStackTransition gap={[6, 10]} zIndex={1} {...stackProps}>
       <Image src="/rose_wedding.svg" alt="Wedding Reception" />
-      <Image
+      {/* <Image
         src={`${STORAGE_URL}/wedding_reception.jpg?alt=media&token=74ebc86c-6944-4281-a739-9b8e84471970`}
         alt="Kristianto and Stephanie Wedding Reception"
-      />
+      /> */}
       <Text textAlign={"center"} whiteSpace={"pre-line"}>
-        {`Saturday, July 8th 2023
-        6 PM GMT +7 / 18:00 WIB
-        Ramada Suites By Wyndham Solo
-        The Warmest Garden`}
+        {`Sunday, November 17th 2024
+        08:00 WIB
+        Depan Terminal Pasar Kamis
+        Sukaraja, Way Tenong, Lampung Barat`}
       </Text>
       <LinkOverlay
         href={"https://goo.gl/maps/trFaRRzjDf26VUTm7?coh=178572&entry=tt"}
@@ -32,7 +32,19 @@ const WeddingReception = ({ ...stackProps }: StackProps) => {
       >
         <Button>Map Location</Button>
       </LinkOverlay>
-      <Text textAlign={"center"} w="sm" px={2}>
+      <Text textAlign={"center"} whiteSpace={"pre-line"}>
+        {`Sunday, November 17th 2024
+        08:00 WIB
+        Depan Terminal Pasar Kamis
+        Sukaraja, Way Tenong, Lampung Barat`}
+      </Text>
+      <LinkOverlay
+        href={"https://goo.gl/maps/trFaRRzjDf26VUTm7?coh=178572&entry=tt"}
+        target="_blank"
+      >
+        <Button>Map Location</Button>
+      </LinkOverlay>
+      {/* <Text textAlign={"center"} w="sm" px={2}>
         {`It’s an outdoor wedding party, so we would recommend you to wear your comfortable party outfit and shoes.`}
       </Text>
       <HStack gap={[12, 16]}>
@@ -75,7 +87,7 @@ const WeddingReception = ({ ...stackProps }: StackProps) => {
           >{`Valid for 
           2 Person`}</Text>
         </VStack>
-      </HStack>
+      </HStack> */}
       <Divider
         w={60}
         borderColor={"#B98B3C"}
