@@ -7,9 +7,9 @@ const Header = ({ ...stackProps }: StackProps) => {
     <VStackTransition gap={[6, 10]} zIndex={1} {...stackProps}>
       <Image
         src="/monogram.svg"
-        alt="Kristianto & Stephanie Monogram"
-        width={[128, 192]}
-        height={[128, 192]}
+        alt="Irfan & Sinta Monogram"
+        width={[256, 288]}
+        height={[256, 288]}
         marginX="auto"
       />
       {/* <Text

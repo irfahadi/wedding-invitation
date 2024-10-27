@@ -17,9 +17,9 @@ const InvitationModal = ({ isOpen, onClose, name }: InvitationModalProps) => {
       >
         <Image
           src="/monogram.svg"
-          alt="Kristianto & Stephanie Monogram"
-          width={228}
-          height={229}
+          alt="Irfan & Sinta Monogram"
+          width={328}
+          height={329}
           mb={8}
         />
         <Text>To our dearest,</Text>
