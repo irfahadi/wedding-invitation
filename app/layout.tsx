@@ -7,8 +7,18 @@ import { RootProvider } from "./provider";
 const lato = Lato({ weight: ["300", "400", "700"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Irfan & Sinta",
+  title: "The Weeding of Irfan & Sinta",
   description: "Irfan Fahmi Ahmadi & Sinta Ariani Wedding Invitation",
+  openGraph: {
+    images: [
+      {
+        url: '/happy 2.jpg',
+        width: 600,
+        height: 800,
+      },
+    ],
+  }
+  
 };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
