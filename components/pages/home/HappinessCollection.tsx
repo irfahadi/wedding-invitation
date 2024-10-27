@@ -14,28 +14,28 @@ const images = [
   //   height: 305,
   // },
   {
-    picture: "/engadgement.jpeg",
-    width: 258,
-    height: 305,
-  },
-  {
-    picture: "/engadgement 2.jpeg",
-    width: 258,
-    height: 305,
-  },
-  {
     colSpan: 2,
     picture: "/happy.jpg",
     width: 542,
     height: 305,
   },
   {
-    picture: "/happy 2.jpg",
+    picture: "/engadgement.jpg",
+    width: 258,
+    height: 305,
+  },
+  {
+    picture: "/engadgement 2.jpg",
     width: 258,
     height: 305,
   },
   {
     picture: "/happy 3.jpg",
+    width: 258,
+    height: 305,
+  },
+  {
+    picture: "/happy 2.jpg",
     width: 258,
     height: 305,
   }

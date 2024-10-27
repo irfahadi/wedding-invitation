@@ -24,9 +24,7 @@ const Blessing = ({ ...stackProps }: StackProps) => {
           Your Blessing`}
         </Title>
         <Text textAlign={"center"} w="sm" px={2}>
-          Your kind blessing can be sent to this information below. Also please
-          fill your address information so that we can send you a gratitude
-          gift.
+          Your kind blessing can be sent to this information below.
         </Text>
         <Button onClick={onOpen}>Bank Transfer</Button>
         <Divider
