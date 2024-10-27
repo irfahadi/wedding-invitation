@@ -3,7 +3,7 @@
 import { InvitationModal } from "@/components/modals";
 import { VStack, useDisclosure } from "@chakra-ui/react";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { setCookie, getCookie } from "cookies-next";
 import { HomeContent } from "./content";
 import { getDisplayName } from "./utils";
@@ -26,6 +26,7 @@ const HomePage = () => {
   const query = useSearchParams();
   const { isOpen, onClose, onOpen } = useDisclosure();
   const [name, setName] = useState<string | undefined>(getCookie("name"));
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const cookieOptions = useMemo(
     () => ({
@@ -37,7 +38,15 @@ const HomePage = () => {
     []
   );
 
-  const isRecentlyOpen = getCookie("is-recently-open") === "1";
+  // const isRecentlyOpen = getCookie("is-recently-open") === "1";
+
+  useEffect(() => {
+    // Ensure that the code only runs in the browser
+    if (typeof window !== 'undefined') {
+      // Initialize the audio object and assign it to the ref
+      audioRef.current = new Audio('/backsound.mp3');
+    }
+  }, []);
 
   useEffect(() => {
     const to = query.get("to");
@@ -53,16 +62,16 @@ const HomePage = () => {
   }, [query, cookieOptions]);
 
   useEffect(() => {
-    if (name && !isRecentlyOpen) onOpen();
-  }, [name, isRecentlyOpen, onOpen]);
+    if (name) onOpen();
+  }, [name, onOpen]);
 
-  useEffect(() => {
-    if (isOpen) setCookie("is-recently-open", "1", cookieOptions);
-  }, [isOpen, cookieOptions]);
+  // useEffect(() => {
+  //   if (isOpen) setCookie("is-recently-open", "1", cookieOptions);
+  // }, [isOpen, cookieOptions]);
 
   return (
-    <VStack minH="100vh" justifyContent={"center"} gap={0} overflowX={"hidden"}>
-      <InvitationModal isOpen={isOpen} onClose={onClose} name={name} />
+    <VStack minH="100vh" justifyContent={"center"} gap={0} overflowX={"hidden"} >
+      <InvitationModal isOpen={isOpen} onClose={()=>{audioRef.current?.play();onClose()}} name={name} />
       <HomeContent name={name} />
     </VStack>
   );

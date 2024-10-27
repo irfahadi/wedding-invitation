@@ -84,6 +84,7 @@ const BlessingModal = ({ isOpen, onClose }: BlessingModalProps) => {
           Your Blessing`}
         </Title>
         <Text>You can send the blessing gift to</Text>
+
         <Text
           as="h4"
           fontSize={"xl"}
@@ -92,10 +93,10 @@ const BlessingModal = ({ isOpen, onClose }: BlessingModalProps) => {
           letterSpacing={2}
           fontWeight={700}
         >
-          BCA | Stephanie | 2820037114
+          BCA | Sinta Ariani | 5490474325
         </Text>
 
-        <CopyToClipboard text={"2820037114"}>
+        <CopyToClipboard text={"5490474325"}>
           <Button
             onClick={() =>
               toast({
@@ -110,7 +111,33 @@ const BlessingModal = ({ isOpen, onClose }: BlessingModalProps) => {
           </Button>
         </CopyToClipboard>
 
-        <VStack
+        <Text
+          as="h4"
+          fontSize={"xl"}
+          casing={"uppercase"}
+          textAlign={"center"}
+          letterSpacing={2}
+          fontWeight={700}
+        >
+          BRI | Sinta Ariani | 010101082221507
+        </Text>
+
+        <CopyToClipboard text={"010101082221507"}>
+          <Button
+            onClick={() =>
+              toast({
+                description: "Copied!",
+                status: "success",
+                isClosable: true,
+                duration: 2500,
+              })
+            }
+          >
+            Copy Account Number
+          </Button>
+        </CopyToClipboard>
+
+        {/* <VStack
           as="form"
           justifyContent={"center"}
           alignItems={"center"}
@@ -157,7 +184,7 @@ const BlessingModal = ({ isOpen, onClose }: BlessingModalProps) => {
           <Button type="submit" isLoading={loading} mt={4}>
             {loading ? "Confirming..." : "Confirm"}
           </Button>
-        </VStack>
+        </VStack> */}
       </CommonModalContent>
     </Modal>
   );

@@ -25,7 +25,7 @@ const CelebrateWithUs = ({ ...stackProps }: StackProps) => {
       <Button
         as="a"
         href={
-          "https://calendar.google.com/render?action=TEMPLATE&text=Kristianto+%26+Stephanie+Wedding&location=Ramada+Suites+By+Wyndham+Solo%2C+Jalan+Adi+Sucipto%2C+Gatak%2C+Gajahan%2C+Karanganyar+Regency%2C+Central+Java&dates=20230708T110000Z%2F20230708T140000Z"
+          "https://calendar.app.google/v48L47H3GcGZZZQBA"
         }
         target="_blank"
       >

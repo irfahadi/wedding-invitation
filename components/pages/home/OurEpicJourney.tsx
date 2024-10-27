@@ -37,7 +37,7 @@ const OurEpicJourney = ({ ...stackProps }: StackProps) => {
             <Tr>
               <Td p={[2, 4]}>
                 <Text fontSize={["sm", "medium"]} textAlign={"right"}>
-                  2011
+                  2016
                 </Text>
               </Td>
               <Td py={0} px={[2, 4]} rowSpan={9}>
@@ -45,12 +45,12 @@ const OurEpicJourney = ({ ...stackProps }: StackProps) => {
               </Td>
               <Td p={[2, 4]}>
                 <Text fontSize={["sm", "medium"]} whiteSpace={"pre-line"}>
-                  {`Our first meet at Maranatha 
-                  Christian University Bandung.`}
+                  {`Our first meet at Sekolah 
+                  Tinggi Teknik PLN`}
                 </Text>
               </Td>
             </Tr>
-            <Tr>
+            {/* <Tr>
               <Td p={[2, 4]}></Td>
               <Td p={[2, 4]}>
                 <Text fontSize={["sm", "medium"]} whiteSpace={"pre-line"}>
@@ -58,8 +58,8 @@ const OurEpicJourney = ({ ...stackProps }: StackProps) => {
                   group in church.`}
                 </Text>
               </Td>
-            </Tr>
-            <Tr>
+            </Tr> */}
+            {/* <Tr>
               <Td p={[2, 4]}>
                 <Text fontSize={["sm", "medium"]} textAlign={"right"}>
                   2015
@@ -71,21 +71,21 @@ const OurEpicJourney = ({ ...stackProps }: StackProps) => {
                   career in Jakarta.`}
                 </Text>
               </Td>
-            </Tr>
+            </Tr> */}
             <Tr>
               <Td p={[2, 4]}>
                 <Text fontSize={["sm", "medium"]} textAlign={"right"}>
-                  2018
+                  2023
                 </Text>
               </Td>
               <Td p={[2, 4]}>
                 <Text fontSize={["sm", "medium"]} whiteSpace={"pre-line"}>
-                  {`Meeting again in Bandung and 
-                  begin a relationship.`}
+                  {`Meeting again in Jakarta 
+                  and begin a relationship.`}
                 </Text>
               </Td>
             </Tr>
-            <Tr>
+            {/* <Tr>
               <Td p={[2, 4]}></Td>
               <Td p={[2, 4]}>
                 <Text fontSize={["sm", "medium"]} whiteSpace={"pre-line"}>
@@ -93,21 +93,21 @@ const OurEpicJourney = ({ ...stackProps }: StackProps) => {
                   between Jakarta - Karawang.`}
                 </Text>
               </Td>
-            </Tr>
+            </Tr> */}
             <Tr>
               <Td p={[2, 4]}>
                 <Text fontSize={["sm", "medium"]} textAlign={"right"}>
-                  2020
+                  2024
                 </Text>
               </Td>
               <Td p={[2, 4]}>
                 <Text fontSize={["sm", "medium"]} whiteSpace={"pre-line"}>
-                  {`Commited to proceed a serious 
-                  relationship.`}
+                  {`Commited to proceed 
+                  a serious relationship.`}
                 </Text>
               </Td>
             </Tr>
-            <Tr>
+            {/* <Tr>
               <Td p={[2, 4]}>
                 <Text fontSize={["sm", "medium"]} textAlign={"right"}>
                   2021
@@ -120,11 +120,11 @@ const OurEpicJourney = ({ ...stackProps }: StackProps) => {
                   Tanjung Pinang - Solo.`}
                 </Text>
               </Td>
-            </Tr>
+            </Tr> */}
             <Tr>
               <Td p={[2, 4]}>
                 <Text fontSize={["sm", "medium"]} textAlign={"right"}>
-                  Feb 12nd 2023
+                  June 30th 2024
                 </Text>
               </Td>
               <Td p={[2, 4]}>
@@ -137,7 +137,10 @@ const OurEpicJourney = ({ ...stackProps }: StackProps) => {
             <Tr>
               <Td p={[2, 4]}>
                 <Text fontSize={["sm", "medium"]} textAlign={"right"}>
-                  July 8th 2023
+                  November 17th 2024
+                </Text>
+                <Text fontSize={["sm", "medium"]} textAlign={"right"}>
+                  December 29th 2024
                 </Text>
               </Td>
               <Td p={[2, 4]}>

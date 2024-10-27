@@ -27,19 +27,19 @@ const WeddingReception = ({ ...stackProps }: StackProps) => {
         Sukaraja, Way Tenong, Lampung Barat`}
       </Text>
       <LinkOverlay
-        href={"https://goo.gl/maps/trFaRRzjDf26VUTm7?coh=178572&entry=tt"}
+        href={"https://maps.app.goo.gl/sgK7KvbVKv5nZDF2A"}
         target="_blank"
       >
         <Button>Map Location</Button>
       </LinkOverlay>
       <Text textAlign={"center"} whiteSpace={"pre-line"}>
-        {`Sunday, November 17th 2024
-        08:00 WIB
-        Depan Terminal Pasar Kamis
-        Sukaraja, Way Tenong, Lampung Barat`}
+        {`Sunday, December 29th 2024
+        10:00 WIB
+        Kelurahan Gondoriyo
+        Gondoriyo, Ngaliyan, Semarang`}
       </Text>
       <LinkOverlay
-        href={"https://goo.gl/maps/trFaRRzjDf26VUTm7?coh=178572&entry=tt"}
+        href={"https://maps.app.goo.gl/YayLh9buGeSqUMr69"}
         target="_blank"
       >
         <Button>Map Location</Button>

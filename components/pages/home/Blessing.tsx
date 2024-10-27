@@ -49,7 +49,7 @@ const Blessing = ({ ...stackProps }: StackProps) => {
           whiteSpace={"pre-line"}
         >
           {`Warm regards,
-          Kristianto & Stephanie`}
+          Irfan & Sinta`}
         </Text>
       </VStackTransition>
     </>
