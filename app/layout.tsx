@@ -7,12 +7,13 @@ import { RootProvider } from "./provider";
 const lato = Lato({ weight: ["300", "400", "700"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://wiis.dev'),
   title: "The Weeding of Irfan & Sinta",
   description: "Irfan Fahmi Ahmadi & Sinta Ariani Wedding Invitation",
   openGraph: {
     images: [
       {
-        url: 'https://github.com/irfahadi/wedding-invitation/blob/master/public/happy%202.jpg?raw=true',
+        url: '/happy 2.jpg',
         width: 600,
         height: 800,
       },
