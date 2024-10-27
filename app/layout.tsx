@@ -7,7 +7,7 @@ import { RootProvider } from "./provider";
 const lato = Lato({ weight: ["300", "400", "700"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://wiis.dev'),
+  metadataBase: new URL('https://wedding-invitation-irfan-and-sinta.vercel.app/'),
   title: "The Weeding of Irfan & Sinta",
   description: "Irfan Fahmi Ahmadi & Sinta Ariani Wedding Invitation",
   openGraph: {
