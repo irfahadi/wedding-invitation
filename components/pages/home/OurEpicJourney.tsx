@@ -37,7 +37,7 @@ const OurEpicJourney = ({ ...stackProps }: StackProps) => {
             <Tr>
               <Td p={[2, 4]}>
                 <Text fontSize={["sm", "medium"]} textAlign={"right"}>
-                  2016
+                  2017
                 </Text>
               </Td>
               <Td py={0} px={[2, 4]} rowSpan={9}>
