@@ -45,8 +45,10 @@ const OurEpicJourney = ({ ...stackProps }: StackProps) => {
               </Td>
               <Td p={[2, 4]}>
                 <Text fontSize={["sm", "medium"]} whiteSpace={"pre-line"}>
-                  {`Our first meet at Sekolah 
-                  Tinggi Teknik PLN`}
+                  {`We were just casual acquaintances 
+                  on the same campus—two students 
+                  in shared classes, offering each 
+                  other brief nods and polite smiles.`}
                 </Text>
               </Td>
             </Tr>
@@ -80,8 +82,9 @@ const OurEpicJourney = ({ ...stackProps }: StackProps) => {
               </Td>
               <Td p={[2, 4]}>
                 <Text fontSize={["sm", "medium"]} whiteSpace={"pre-line"}>
-                  {`Meeting again in Jakarta 
-                  and begin a relationship.`}
+                  {`Life brought us back together, 
+                  this time as colleagues in a new workplace. The setting was different, 
+                  and so were we. `}
                 </Text>
               </Td>
             </Tr>
@@ -102,8 +105,8 @@ const OurEpicJourney = ({ ...stackProps }: StackProps) => {
               </Td>
               <Td p={[2, 4]}>
                 <Text fontSize={["sm", "medium"]} whiteSpace={"pre-line"}>
-                  {`Commited to proceed 
-                  a serious relationship.`}
+                  {`We started to see each 
+                  other in a different light.`}
                 </Text>
               </Td>
             </Tr>
@@ -131,7 +134,8 @@ const OurEpicJourney = ({ ...stackProps }: StackProps) => {
                 <Text
                   fontSize={["sm", "medium"]}
                   whiteSpace={"pre-line"}
-                >{`Engagement`}</Text>
+                >{`in a moment filled with love and hope, 
+                he asked her to be his forever.`}</Text>
               </Td>
             </Tr>
             <Tr>
@@ -147,7 +151,10 @@ const OurEpicJourney = ({ ...stackProps }: StackProps) => {
                 <Text
                   fontSize={["sm", "medium"]}
                   whiteSpace={"pre-line"}
-                >{`Our big day with you!`}</Text>
+                >{`with hearts full of love and gratitude, 
+                we humbly invite you to join us and 
+                bless our steps as we embark on this 
+                beautiful new journey together!`}</Text>
               </Td>
             </Tr>
           </Tbody>
