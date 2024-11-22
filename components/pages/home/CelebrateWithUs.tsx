@@ -1,7 +1,7 @@
 import { Countdown } from "@/components/Countdown";
 import { Title } from "@/components/Title";
 import { VStackTransition } from "@/components/VStackTransition";
-import { Button, Divider, Image, StackProps, Text } from "@chakra-ui/react";
+import { Button, Divider, Image, LinkOverlay, StackProps, Text } from "@chakra-ui/react";
 
 const CelebrateWithUs = ({ ...stackProps }: StackProps) => {
   const STORAGE_URL = process.env.NEXT_PUBLIC_STORAGE_URL;
@@ -22,15 +22,12 @@ const CelebrateWithUs = ({ ...stackProps }: StackProps) => {
         /> */}
       </VStackTransition>
       <Countdown />
-      <Button
-        as="a"
-        href={
-          "https://calendar.app.google/ivx7kRbyTdjNCe6w7"
-        }
+      <LinkOverlay
+        href={"https://calendar.app.google/ivx7kRbyTdjNCe6w7"}
         target="_blank"
       >
-        Remind Me!
-      </Button>
+        <Button>Remind Me!</Button>
+      </LinkOverlay>
       <Divider
         w={60}
         borderColor={"#B98B3C"}
