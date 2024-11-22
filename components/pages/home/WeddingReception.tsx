@@ -20,7 +20,7 @@ const WeddingReception = ({ ...stackProps }: StackProps) => {
         src={`${STORAGE_URL}/wedding_reception.jpg?alt=media&token=74ebc86c-6944-4281-a739-9b8e84471970`}
         alt="Kristianto and Stephanie Wedding Reception"
       /> */}
-      <Text textAlign={"center"} whiteSpace={"pre-line"}>
+      {/* <Text textAlign={"center"} whiteSpace={"pre-line"}>
         {`Sunday, November 17th 2024
         08:00 WIB
         Depan Terminal Pasar Kamis
@@ -31,7 +31,7 @@ const WeddingReception = ({ ...stackProps }: StackProps) => {
         target="_blank"
       >
         <Button>Map Location</Button>
-      </LinkOverlay>
+      </LinkOverlay> */}
       <Text textAlign={"center"} whiteSpace={"pre-line"}>
         {`Sunday, December 29th 2024
         10:00 WIB

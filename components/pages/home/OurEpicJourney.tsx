@@ -45,10 +45,12 @@ const OurEpicJourney = ({ ...stackProps }: StackProps) => {
               </Td>
               <Td p={[2, 4]}>
                 <Text fontSize={["sm", "medium"]} whiteSpace={"pre-line"}>
-                  {`We were just casual acquaintances 
-                  on the same campus—two students 
-                  in shared classes, offering each 
-                  other brief nods and polite smiles.`}
+                  {`We were just casual 
+                  acquaintances on the 
+                  same campus—two students 
+                  in shared classes, offering 
+                  each other brief nods and
+                  polite smiles.`}
                 </Text>
               </Td>
             </Tr>
@@ -82,8 +84,10 @@ const OurEpicJourney = ({ ...stackProps }: StackProps) => {
               </Td>
               <Td p={[2, 4]}>
                 <Text fontSize={["sm", "medium"]} whiteSpace={"pre-line"}>
-                  {`Life brought us back together, 
-                  this time as colleagues in a new workplace. The setting was different, 
+                  {`Life brought us back 
+                  together, this time as 
+                  colleagues in a new workplace. 
+                  The setting was different, 
                   and so were we. `}
                 </Text>
               </Td>
@@ -134,8 +138,9 @@ const OurEpicJourney = ({ ...stackProps }: StackProps) => {
                 <Text
                   fontSize={["sm", "medium"]}
                   whiteSpace={"pre-line"}
-                >{`in a moment filled with love and hope, 
-                he asked her to be his forever.`}</Text>
+                >{`in a moment filled with 
+                love and hope, he asked 
+                her to be his forever.`}</Text>
               </Td>
             </Tr>
             <Tr>
@@ -143,6 +148,7 @@ const OurEpicJourney = ({ ...stackProps }: StackProps) => {
                 <Text fontSize={["sm", "medium"]} textAlign={"right"}>
                   November 17th 2024
                 </Text>
+                <br/>
                 <Text fontSize={["sm", "medium"]} textAlign={"right"}>
                   December 29th 2024
                 </Text>
@@ -151,10 +157,13 @@ const OurEpicJourney = ({ ...stackProps }: StackProps) => {
                 <Text
                   fontSize={["sm", "medium"]}
                   whiteSpace={"pre-line"}
-                >{`with hearts full of love and gratitude, 
-                we humbly invite you to join us and 
-                bless our steps as we embark on this 
-                beautiful new journey together!`}</Text>
+                >{`with hearts full of 
+                love and gratitude, 
+                we humbly invite you 
+                to join us and bless 
+                our steps as we embark 
+                on this beautiful new 
+                journey together!`}</Text>
               </Td>
             </Tr>
           </Tbody>

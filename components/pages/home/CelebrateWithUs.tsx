@@ -14,7 +14,7 @@ const CelebrateWithUs = ({ ...stackProps }: StackProps) => {
           Celebrate with us`}
         </Title>
         <Text as="h3" fontSize={"xl"} textAlign={"center"}>
-          Sunday, November 17th 2024
+          Sunday, December 29th 2024
         </Text>
         {/* <Image
           src={`${STORAGE_URL}/celebrate_with_us.jpg?alt=media&token=9613a9e4-ca4c-4906-92c8-0d5e8355c883`}
@@ -25,7 +25,7 @@ const CelebrateWithUs = ({ ...stackProps }: StackProps) => {
       <Button
         as="a"
         href={
-          "https://calendar.app.google/v48L47H3GcGZZZQBA"
+          "https://calendar.app.google/ivx7kRbyTdjNCe6w7"
         }
         target="_blank"
       >
