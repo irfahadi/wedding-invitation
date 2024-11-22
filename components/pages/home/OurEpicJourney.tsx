@@ -86,8 +86,9 @@ const OurEpicJourney = ({ ...stackProps }: StackProps) => {
                 <Text fontSize={["sm", "medium"]} whiteSpace={"pre-line"}>
                   {`Life brought us back 
                   together, this time as 
-                  colleagues in a new workplace. 
-                  The setting was different, 
+                  colleagues in a new 
+                  workplace. The setting 
+                  was different, 
                   and so were we. `}
                 </Text>
               </Td>
